@@ -12,6 +12,10 @@
 		FCF5BB402AE1653B00BA6F6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCF5BB3F2AE1653B00BA6F6B /* Assets.xcassets */; };
 		FCF5BB432AE1653B00BA6F6B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCF5BB412AE1653B00BA6F6B /* LaunchScreen.storyboard */; };
 		FCF5BB4E2AE1668E00BA6F6B /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF5BB4D2AE1668E00BA6F6B /* Coordinator.swift */; };
+		FCF5BB502AE1689F00BA6F6B /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF5BB4F2AE1689F00BA6F6B /* AppCoordinator.swift */; };
+		FCF5BB532AE16A7C00BA6F6B /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF5BB522AE16A7C00BA6F6B /* TabBarItem.swift */; };
+		FCF5BB552AE16B3900BA6F6B /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF5BB542AE16B3900BA6F6B /* TabBarController.swift */; };
+		FCF5BB572AE16C2F00BA6F6B /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF5BB562AE16C2F00BA6F6B /* TabBarCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		FCF5BB422AE1653B00BA6F6B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FCF5BB442AE1653B00BA6F6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCF5BB4D2AE1668E00BA6F6B /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		FCF5BB4F2AE1689F00BA6F6B /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		FCF5BB522AE16A7C00BA6F6B /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
+		FCF5BB542AE16B3900BA6F6B /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		FCF5BB562AE16C2F00BA6F6B /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,9 +62,10 @@
 		FCF5BB352AE1653800BA6F6B /* CurrencyConverterApp */ = {
 			isa = PBXGroup;
 			children = (
+				FCF5BB512AE169CA00BA6F6B /* TabBar */,
 				FCF5BB4C2AE1667800BA6F6B /* Coordinator */,
-				FCF5BB4B2AE1657500BA6F6B /* Resources */,
 				FCF5BB4A2AE1654900BA6F6B /* Application */,
+				FCF5BB4B2AE1657500BA6F6B /* Resources */,
 			);
 			path = CurrencyConverterApp;
 			sourceTree = "<group>";
@@ -66,6 +75,7 @@
 			children = (
 				FCF5BB382AE1653800BA6F6B /* SceneDelegate.swift */,
 				FCF5BB362AE1653800BA6F6B /* AppDelegate.swift */,
+				FCF5BB4F2AE1689F00BA6F6B /* AppCoordinator.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -86,6 +96,16 @@
 				FCF5BB4D2AE1668E00BA6F6B /* Coordinator.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		FCF5BB512AE169CA00BA6F6B /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				FCF5BB562AE16C2F00BA6F6B /* TabBarCoordinator.swift */,
+				FCF5BB542AE16B3900BA6F6B /* TabBarController.swift */,
+				FCF5BB522AE16A7C00BA6F6B /* TabBarItem.swift */,
+			);
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,7 +178,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCF5BB502AE1689F00BA6F6B /* AppCoordinator.swift in Sources */,
 				FCF5BB372AE1653800BA6F6B /* AppDelegate.swift in Sources */,
+				FCF5BB532AE16A7C00BA6F6B /* TabBarItem.swift in Sources */,
+				FCF5BB572AE16C2F00BA6F6B /* TabBarCoordinator.swift in Sources */,
+				FCF5BB552AE16B3900BA6F6B /* TabBarController.swift in Sources */,
 				FCF5BB392AE1653800BA6F6B /* SceneDelegate.swift in Sources */,
 				FCF5BB4E2AE1668E00BA6F6B /* Coordinator.swift in Sources */,
 			);

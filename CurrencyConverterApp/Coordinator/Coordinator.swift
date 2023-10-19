@@ -34,7 +34,7 @@ extension Coordinator {
         childCoordinator = childCoordinator.filter { $0 is T == false }
     }
     
-    func removeAllChildCoordinator() {
+    func removeAllChildCoordinators() {
         childCoordinator.removeAll()
     }
     
