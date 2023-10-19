@@ -11,6 +11,7 @@
 		FCF5BB392AE1653800BA6F6B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF5BB382AE1653800BA6F6B /* SceneDelegate.swift */; };
 		FCF5BB402AE1653B00BA6F6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCF5BB3F2AE1653B00BA6F6B /* Assets.xcassets */; };
 		FCF5BB432AE1653B00BA6F6B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCF5BB412AE1653B00BA6F6B /* LaunchScreen.storyboard */; };
+		FCF5BB4E2AE1668E00BA6F6B /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF5BB4D2AE1668E00BA6F6B /* Coordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		FCF5BB3F2AE1653B00BA6F6B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FCF5BB422AE1653B00BA6F6B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FCF5BB442AE1653B00BA6F6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FCF5BB4D2AE1668E00BA6F6B /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +54,7 @@
 		FCF5BB352AE1653800BA6F6B /* CurrencyConverterApp */ = {
 			isa = PBXGroup;
 			children = (
+				FCF5BB4C2AE1667800BA6F6B /* Coordinator */,
 				FCF5BB4B2AE1657500BA6F6B /* Resources */,
 				FCF5BB4A2AE1654900BA6F6B /* Application */,
 			);
@@ -75,6 +78,14 @@
 				FCF5BB3F2AE1653B00BA6F6B /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		FCF5BB4C2AE1667800BA6F6B /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				FCF5BB4D2AE1668E00BA6F6B /* Coordinator.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,6 +160,7 @@
 			files = (
 				FCF5BB372AE1653800BA6F6B /* AppDelegate.swift in Sources */,
 				FCF5BB392AE1653800BA6F6B /* SceneDelegate.swift in Sources */,
+				FCF5BB4E2AE1668E00BA6F6B /* Coordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
