@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		FCD9F35F2AE2AFE300B2C790 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9F35E2AE2AFE300B2C790 /* UIColor.swift */; };
 		FCD9F3612AE2B00600B2C790 /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9F3602AE2B00600B2C790 /* Bundle-Decodable.swift */; };
+		FCD9F3652AE2B3EA00B2C790 /* CurrencyListCoordintor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9F3642AE2B3EA00B2C790 /* CurrencyListCoordintor.swift */; };
+		FCD9F3682AE2B47300B2C790 /* CurrencyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9F3672AE2B47300B2C790 /* CurrencyView.swift */; };
+		FCD9F36A2AE2B4A900B2C790 /* CurrencyViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9F3692AE2B4A900B2C790 /* CurrencyViewCell.swift */; };
+		FCD9F36D2AE2B4DD00B2C790 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9F36C2AE2B4DD00B2C790 /* SearchBar.swift */; };
 		FCF5BB372AE1653800BA6F6B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF5BB362AE1653800BA6F6B /* AppDelegate.swift */; };
 		FCF5BB392AE1653800BA6F6B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF5BB382AE1653800BA6F6B /* SceneDelegate.swift */; };
 		FCF5BB402AE1653B00BA6F6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCF5BB3F2AE1653B00BA6F6B /* Assets.xcassets */; };
@@ -27,6 +31,10 @@
 		FCD9F35C2AE2AEDB00B2C790 /* Inter-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Medium.otf"; sourceTree = "<group>"; };
 		FCD9F35E2AE2AFE300B2C790 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		FCD9F3602AE2B00600B2C790 /* Bundle-Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
+		FCD9F3642AE2B3EA00B2C790 /* CurrencyListCoordintor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyListCoordintor.swift; sourceTree = "<group>"; };
+		FCD9F3672AE2B47300B2C790 /* CurrencyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyView.swift; sourceTree = "<group>"; };
+		FCD9F3692AE2B4A900B2C790 /* CurrencyViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewCell.swift; sourceTree = "<group>"; };
+		FCD9F36C2AE2B4DD00B2C790 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		FCF5BB332AE1653800BA6F6B /* CurrencyConverterApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrencyConverterApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCF5BB362AE1653800BA6F6B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCF5BB382AE1653800BA6F6B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +79,33 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		FCD9F3622AE2B0D000B2C790 /* CurrencyList */ = {
+			isa = PBXGroup;
+			children = (
+				FCD9F3662AE2B45400B2C790 /* View */,
+				FCD9F3632AE2B3D500B2C790 /* CurrencyListCoordinator */,
+			);
+			path = CurrencyList;
+			sourceTree = "<group>";
+		};
+		FCD9F3632AE2B3D500B2C790 /* CurrencyListCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				FCD9F3642AE2B3EA00B2C790 /* CurrencyListCoordintor.swift */,
+			);
+			path = CurrencyListCoordinator;
+			sourceTree = "<group>";
+		};
+		FCD9F3662AE2B45400B2C790 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FCD9F3672AE2B47300B2C790 /* CurrencyView.swift */,
+				FCD9F3692AE2B4A900B2C790 /* CurrencyViewCell.swift */,
+				FCD9F36C2AE2B4DD00B2C790 /* SearchBar.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		FCF5BB2A2AE1653800BA6F6B = {
 			isa = PBXGroup;
 			children = (
@@ -90,10 +125,11 @@
 		FCF5BB352AE1653800BA6F6B /* CurrencyConverterApp */ = {
 			isa = PBXGroup;
 			children = (
-				FCD9F35D2AE2AF9900B2C790 /* Extensions */,
+				FCD9F3622AE2B0D000B2C790 /* CurrencyList */,
 				FCF5BB512AE169CA00BA6F6B /* TabBar */,
 				FCF5BB4C2AE1667800BA6F6B /* Coordinator */,
 				FCF5BB4A2AE1654900BA6F6B /* Application */,
+				FCD9F35D2AE2AF9900B2C790 /* Extensions */,
 				FCD9F3582AE2AEBB00B2C790 /* Fonts */,
 				FCF5BB4B2AE1657500BA6F6B /* Resources */,
 			);
@@ -208,15 +244,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCD9F36D2AE2B4DD00B2C790 /* SearchBar.swift in Sources */,
 				FCF5BB502AE1689F00BA6F6B /* AppCoordinator.swift in Sources */,
+				FCD9F3652AE2B3EA00B2C790 /* CurrencyListCoordintor.swift in Sources */,
 				FCF5BB372AE1653800BA6F6B /* AppDelegate.swift in Sources */,
 				FCF5BB532AE16A7C00BA6F6B /* TabBarItem.swift in Sources */,
 				FCF5BB572AE16C2F00BA6F6B /* TabBarCoordinator.swift in Sources */,
 				FCF5BB552AE16B3900BA6F6B /* TabBarController.swift in Sources */,
+				FCD9F3682AE2B47300B2C790 /* CurrencyView.swift in Sources */,
 				FCD9F3612AE2B00600B2C790 /* Bundle-Decodable.swift in Sources */,
 				FCD9F35F2AE2AFE300B2C790 /* UIColor.swift in Sources */,
 				FCF5BB392AE1653800BA6F6B /* SceneDelegate.swift in Sources */,
 				FCF5BB4E2AE1668E00BA6F6B /* Coordinator.swift in Sources */,
+				FCD9F36A2AE2B4A900B2C790 /* CurrencyViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

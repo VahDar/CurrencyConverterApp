@@ -19,8 +19,8 @@ class TabBarController: UITabBarController {
         self.viewControllers = []
         tabBar.backgroundColor = .white
         tabBar.layer.borderWidth = 1
-        tabBar.layer.borderColor = UIColor.gray.cgColor
-        tabBar.tintColor = .blue
+        tabBar.layer.borderColor = UIColor.tabBarUnpressed.cgColor
+        tabBar.tintColor = .tabBarPressed
     }
 
 
