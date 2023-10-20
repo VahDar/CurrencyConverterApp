@@ -18,9 +18,17 @@ class TabBarCoordinator: Coordinator {
     }
     
     func start() {
-        
+        currencyList()
     }
     
     func finish() {
+    }
+    
+    private func currencyList() {
+        let viewModel = CurrencyListViewModel()
+        let coordinator = CurrencyListCoordinator(UINavigationController(), viewmodel: viewModel)
+        tabBarController.viewControllers?.append(coordinator.navigationController)
+        addChildCoordinator(coordinator)
+        coordinator.start()
     }
 }

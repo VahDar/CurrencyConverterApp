@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import SwiftUI
 
-final class CurrencyListCoordintor: Coordinator {
+final class CurrencyListCoordinator: Coordinator {
     var childCoordinator: [Coordinator] = []
     var parentCoordinator: Coordinator?
     var navigationController: UINavigationController
