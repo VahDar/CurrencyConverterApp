@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FCD9F35F2AE2AFE300B2C790 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9F35E2AE2AFE300B2C790 /* UIColor.swift */; };
+		FCD9F3612AE2B00600B2C790 /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9F3602AE2B00600B2C790 /* Bundle-Decodable.swift */; };
 		FCF5BB372AE1653800BA6F6B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF5BB362AE1653800BA6F6B /* AppDelegate.swift */; };
 		FCF5BB392AE1653800BA6F6B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF5BB382AE1653800BA6F6B /* SceneDelegate.swift */; };
 		FCF5BB402AE1653B00BA6F6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCF5BB3F2AE1653B00BA6F6B /* Assets.xcassets */; };
@@ -19,6 +21,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FCD9F3592AE2AEDB00B2C790 /* Montserrat.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Montserrat.ttf; sourceTree = "<group>"; };
+		FCD9F35A2AE2AEDB00B2C790 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
+		FCD9F35B2AE2AEDB00B2C790 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		FCD9F35C2AE2AEDB00B2C790 /* Inter-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Medium.otf"; sourceTree = "<group>"; };
+		FCD9F35E2AE2AFE300B2C790 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		FCD9F3602AE2B00600B2C790 /* Bundle-Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
 		FCF5BB332AE1653800BA6F6B /* CurrencyConverterApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrencyConverterApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCF5BB362AE1653800BA6F6B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCF5BB382AE1653800BA6F6B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +51,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FCD9F3582AE2AEBB00B2C790 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				FCD9F35C2AE2AEDB00B2C790 /* Inter-Medium.otf */,
+				FCD9F35B2AE2AEDB00B2C790 /* Montserrat-Regular.ttf */,
+				FCD9F35A2AE2AEDB00B2C790 /* Montserrat-SemiBold.ttf */,
+				FCD9F3592AE2AEDB00B2C790 /* Montserrat.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		FCD9F35D2AE2AF9900B2C790 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FCD9F35E2AE2AFE300B2C790 /* UIColor.swift */,
+				FCD9F3602AE2B00600B2C790 /* Bundle-Decodable.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		FCF5BB2A2AE1653800BA6F6B = {
 			isa = PBXGroup;
 			children = (
@@ -62,9 +90,11 @@
 		FCF5BB352AE1653800BA6F6B /* CurrencyConverterApp */ = {
 			isa = PBXGroup;
 			children = (
+				FCD9F35D2AE2AF9900B2C790 /* Extensions */,
 				FCF5BB512AE169CA00BA6F6B /* TabBar */,
 				FCF5BB4C2AE1667800BA6F6B /* Coordinator */,
 				FCF5BB4A2AE1654900BA6F6B /* Application */,
+				FCD9F3582AE2AEBB00B2C790 /* Fonts */,
 				FCF5BB4B2AE1657500BA6F6B /* Resources */,
 			);
 			path = CurrencyConverterApp;
@@ -183,6 +213,8 @@
 				FCF5BB532AE16A7C00BA6F6B /* TabBarItem.swift in Sources */,
 				FCF5BB572AE16C2F00BA6F6B /* TabBarCoordinator.swift in Sources */,
 				FCF5BB552AE16B3900BA6F6B /* TabBarController.swift in Sources */,
+				FCD9F3612AE2B00600B2C790 /* Bundle-Decodable.swift in Sources */,
+				FCD9F35F2AE2AFE300B2C790 /* UIColor.swift in Sources */,
 				FCF5BB392AE1653800BA6F6B /* SceneDelegate.swift in Sources */,
 				FCF5BB4E2AE1668E00BA6F6B /* Coordinator.swift in Sources */,
 			);
