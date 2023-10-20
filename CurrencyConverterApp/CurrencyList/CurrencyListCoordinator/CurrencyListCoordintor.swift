@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import SwiftUI
 
 final class CurrencyListCoordintor: Coordinator {
     var childCoordinator: [Coordinator] = []
