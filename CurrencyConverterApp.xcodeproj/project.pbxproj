@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FCC942A92AE40FC1005CF7F1 /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC942A82AE40FC1005CF7F1 /* NavigationBarView.swift */; };
+		FCC942AC2AE41038005CF7F1 /* SetupNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC942AB2AE41038005CF7F1 /* SetupNavBar.swift */; };
+		FCC942AE2AE4109E005CF7F1 /* ReusingSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC942AD2AE4109E005CF7F1 /* ReusingSearchBar.swift */; };
 		FCD9F35F2AE2AFE300B2C790 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9F35E2AE2AFE300B2C790 /* UIColor.swift */; };
 		FCD9F3612AE2B00600B2C790 /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9F3602AE2B00600B2C790 /* Bundle-Decodable.swift */; };
 		FCD9F3652AE2B3EA00B2C790 /* CurrencyListCoordintor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9F3642AE2B3EA00B2C790 /* CurrencyListCoordintor.swift */; };
@@ -33,6 +36,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FCC942A82AE40FC1005CF7F1 /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
+		FCC942AB2AE41038005CF7F1 /* SetupNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupNavBar.swift; sourceTree = "<group>"; };
+		FCC942AD2AE4109E005CF7F1 /* ReusingSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusingSearchBar.swift; sourceTree = "<group>"; };
 		FCD9F3592AE2AEDB00B2C790 /* Montserrat.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Montserrat.ttf; sourceTree = "<group>"; };
 		FCD9F35A2AE2AEDB00B2C790 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
 		FCD9F35B2AE2AEDB00B2C790 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
@@ -75,6 +81,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FCC942AA2AE4101C005CF7F1 /* CustomComponents */ = {
+			isa = PBXGroup;
+			children = (
+				FCC942AB2AE41038005CF7F1 /* SetupNavBar.swift */,
+				FCC942AD2AE4109E005CF7F1 /* ReusingSearchBar.swift */,
+			);
+			path = CustomComponents;
+			sourceTree = "<group>";
+		};
 		FCD9F3582AE2AEBB00B2C790 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +134,7 @@
 				FCD9F3672AE2B47300B2C790 /* CurrencyView.swift */,
 				FCD9F3692AE2B4A900B2C790 /* CurrencyViewCell.swift */,
 				FCD9F36C2AE2B4DD00B2C790 /* SearchBar.swift */,
+				FCC942A82AE40FC1005CF7F1 /* NavigationBarView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -177,6 +193,7 @@
 		FCF5BB352AE1653800BA6F6B /* CurrencyConverterApp */ = {
 			isa = PBXGroup;
 			children = (
+				FCC942AA2AE4101C005CF7F1 /* CustomComponents */,
 				FCD9F3622AE2B0D000B2C790 /* CurrencyList */,
 				FCD9F3712AE2FCBD00B2C790 /* NetworkService */,
 				FCD9F3782AE2FD7200B2C790 /* Model */,
@@ -304,11 +321,14 @@
 				FCD9F36D2AE2B4DD00B2C790 /* SearchBar.swift in Sources */,
 				FCF5BB502AE1689F00BA6F6B /* AppCoordinator.swift in Sources */,
 				FCD9F3652AE2B3EA00B2C790 /* CurrencyListCoordintor.swift in Sources */,
+				FCC942AE2AE4109E005CF7F1 /* ReusingSearchBar.swift in Sources */,
 				FCF5BB372AE1653800BA6F6B /* AppDelegate.swift in Sources */,
 				FCF5BB532AE16A7C00BA6F6B /* TabBarItem.swift in Sources */,
+				FCC942A92AE40FC1005CF7F1 /* NavigationBarView.swift in Sources */,
 				FCF5BB572AE16C2F00BA6F6B /* TabBarCoordinator.swift in Sources */,
 				FCD9F37A2AE2FD8500B2C790 /* CurrencyListModel.swift in Sources */,
 				FCF5BB552AE16B3900BA6F6B /* TabBarController.swift in Sources */,
+				FCC942AC2AE41038005CF7F1 /* SetupNavBar.swift in Sources */,
 				FCD9F3682AE2B47300B2C790 /* CurrencyView.swift in Sources */,
 				FCD9F3612AE2B00600B2C790 /* Bundle-Decodable.swift in Sources */,
 				FCD9F3732AE2FCD800B2C790 /* NetworkError.swift in Sources */,
