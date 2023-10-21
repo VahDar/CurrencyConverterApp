@@ -10,6 +10,9 @@
 		FCC942A92AE40FC1005CF7F1 /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC942A82AE40FC1005CF7F1 /* NavigationBarView.swift */; };
 		FCC942AC2AE41038005CF7F1 /* SetupNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC942AB2AE41038005CF7F1 /* SetupNavBar.swift */; };
 		FCC942AE2AE4109E005CF7F1 /* ReusingSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC942AD2AE4109E005CF7F1 /* ReusingSearchBar.swift */; };
+		FCC942B02AE411A8005CF7F1 /* WalletModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC942AF2AE411A8005CF7F1 /* WalletModel.swift */; };
+		FCC942B32AE411EB005CF7F1 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = FCC942B22AE411EB005CF7F1 /* Realm */; };
+		FCC942B52AE411EB005CF7F1 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FCC942B42AE411EB005CF7F1 /* RealmSwift */; };
 		FCD9F35F2AE2AFE300B2C790 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9F35E2AE2AFE300B2C790 /* UIColor.swift */; };
 		FCD9F3612AE2B00600B2C790 /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9F3602AE2B00600B2C790 /* Bundle-Decodable.swift */; };
 		FCD9F3652AE2B3EA00B2C790 /* CurrencyListCoordintor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9F3642AE2B3EA00B2C790 /* CurrencyListCoordintor.swift */; };
@@ -39,6 +42,7 @@
 		FCC942A82AE40FC1005CF7F1 /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
 		FCC942AB2AE41038005CF7F1 /* SetupNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupNavBar.swift; sourceTree = "<group>"; };
 		FCC942AD2AE4109E005CF7F1 /* ReusingSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusingSearchBar.swift; sourceTree = "<group>"; };
+		FCC942AF2AE411A8005CF7F1 /* WalletModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletModel.swift; sourceTree = "<group>"; };
 		FCD9F3592AE2AEDB00B2C790 /* Montserrat.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Montserrat.ttf; sourceTree = "<group>"; };
 		FCD9F35A2AE2AEDB00B2C790 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
 		FCD9F35B2AE2AEDB00B2C790 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
@@ -75,6 +79,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCC942B52AE411EB005CF7F1 /* RealmSwift in Frameworks */,
+				FCC942B32AE411EB005CF7F1 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				FCD9F3792AE2FD8500B2C790 /* CurrencyListModel.swift */,
+				FCC942AF2AE411A8005CF7F1 /* WalletModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -193,15 +200,15 @@
 		FCF5BB352AE1653800BA6F6B /* CurrencyConverterApp */ = {
 			isa = PBXGroup;
 			children = (
-				FCC942AA2AE4101C005CF7F1 /* CustomComponents */,
+				FCF5BB512AE169CA00BA6F6B /* TabBar */,
 				FCD9F3622AE2B0D000B2C790 /* CurrencyList */,
 				FCD9F3712AE2FCBD00B2C790 /* NetworkService */,
 				FCD9F3782AE2FD7200B2C790 /* Model */,
 				FCD9F37B2AE2FE7000B2C790 /* CountryCurrencies */,
-				FCF5BB512AE169CA00BA6F6B /* TabBar */,
+				FCC942AA2AE4101C005CF7F1 /* CustomComponents */,
 				FCF5BB4C2AE1667800BA6F6B /* Coordinator */,
-				FCF5BB4A2AE1654900BA6F6B /* Application */,
 				FCD9F35D2AE2AF9900B2C790 /* Extensions */,
+				FCF5BB4A2AE1654900BA6F6B /* Application */,
 				FCD9F3582AE2AEBB00B2C790 /* Fonts */,
 				FCF5BB4B2AE1657500BA6F6B /* Resources */,
 			);
@@ -263,6 +270,10 @@
 			dependencies = (
 			);
 			name = CurrencyConverterApp;
+			packageProductDependencies = (
+				FCC942B22AE411EB005CF7F1 /* Realm */,
+				FCC942B42AE411EB005CF7F1 /* RealmSwift */,
+			);
 			productName = CurrencyConverterApp;
 			productReference = FCF5BB332AE1653800BA6F6B /* CurrencyConverterApp.app */;
 			productType = "com.apple.product-type.application";
@@ -291,6 +302,9 @@
 				Base,
 			);
 			mainGroup = FCF5BB2A2AE1653800BA6F6B;
+			packageReferences = (
+				FCC942B12AE411EB005CF7F1 /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = FCF5BB342AE1653800BA6F6B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -340,6 +354,7 @@
 				FCF5BB4E2AE1668E00BA6F6B /* Coordinator.swift in Sources */,
 				FCD9F36A2AE2B4A900B2C790 /* CurrencyViewCell.swift in Sources */,
 				FCD9F3772AE2FD5200B2C790 /* Endpoint.swift in Sources */,
+				FCC942B02AE411A8005CF7F1 /* WalletModel.swift in Sources */,
 				FCD9F3702AE2EEFF00B2C790 /* CurrencyListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -548,6 +563,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FCC942B12AE411EB005CF7F1 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FCC942B22AE411EB005CF7F1 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FCC942B12AE411EB005CF7F1 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		FCC942B42AE411EB005CF7F1 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FCC942B12AE411EB005CF7F1 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FCF5BB2B2AE1653800BA6F6B /* Project object */;
 }
