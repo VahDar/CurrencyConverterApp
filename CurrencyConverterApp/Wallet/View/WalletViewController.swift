@@ -21,23 +21,7 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
     private var cancellable: AnyCancellable!
     let navBar = NavBar()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        fetchData()
-        setupBalanceLabel()
-        setupUI()
-        useSetupNavBar()
-        tableView.dataSource = self
-        tableView.delegate = self
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-            super.viewWillAppear(animated)
-            constraints()
-        fetchData()
-        }
-    
-    //MARK: - Setup UI
+    // MARK: - Views
     var tableView: UITableView = {
         let tableView = UITableView()
         tableView.backgroundColor = .white
@@ -45,14 +29,6 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
-    
-
-    func updateTableView() {
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
-            self.setupBalanceLabel()
-        }
-    }
     
     private var titleLabel: UILabel = {
        let label = UILabel()
@@ -72,7 +48,40 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return label
     }()
     
-    //MARK: Setup UI
+    //MARK: - Lifecycle funcs
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        fetchData()
+        setupBalanceLabel()
+        setupUI()
+        useSetupNavBar()
+        tableView.dataSource = self
+        tableView.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+            super.viewWillAppear(animated)
+            constraints()
+            fetchData()
+        }
+    
+    
+    func updateTableView() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+            self.setupBalanceLabel()
+        }
+    }
+    
+    private func fetchData() {
+        Task {
+            await viewModel.loadData()
+            setupBalanceLabel()
+            tableView.reloadData()
+        }
+    }
+    
+    //MARK: - Setup UI
     func setupUI() {
         navigationController?.navigationItem.hidesBackButton = true
         view.backgroundColor = .white
@@ -120,13 +129,6 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
         ])
     }
     
-    private func fetchData() {
-        Task {
-            await viewModel.loadData()
-            setupBalanceLabel()
-            tableView.reloadData()
-        }
-    }
     
     private func setupBalanceLabel() {
         let balanceWithSymbol = "USD".getSymbolForCurrencyCode() + String(format: "%.2f", viewModel.walletData.reduce(0) { $0 + $1.usdAmount })

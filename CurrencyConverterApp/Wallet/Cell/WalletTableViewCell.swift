@@ -9,6 +9,7 @@ import UIKit
 
 class WalletTableViewCell: UITableViewCell {
 
+    //MARK: - Views
     let countryImage: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
@@ -37,6 +38,7 @@ class WalletTableViewCell: UITableViewCell {
         return label
     }()
     
+    //MARK: - Constreits
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         [currencyCodeLabel, amountLabel, countryImage, currencyAmountLabel].forEach(contentView.addSubview)
@@ -60,6 +62,7 @@ class WalletTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Flow funcs
     func configure(with data: WalletModel) {
         currencyCodeLabel.text = data.code.uppercased()
         countryImage.image = UIImage(named: data.code)
