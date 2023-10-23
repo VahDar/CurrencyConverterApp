@@ -17,7 +17,7 @@ protocol NetworkingWalletProtocol {
    func  getAmount(name: String, amount: Double) async throws -> Double
 }
 
-protocol NetworjingBidsProtocol {
+protocol NetworkingBidsProtocol {
     
 }
 
@@ -35,18 +35,17 @@ final class NetworkingService: NetworkServiceProtocol  {
     }
     
     func getAmount(name: String, amount: Double) async throws -> Double {
-//        guard let url = URL(string: Api.pair.rawValue + "\(name)/USD") else
-//        { throw NetworkError.invalidURL }
-//
-//        do {
-//            let (data, _) = try await URLSession.shared.data(from: url)
-//            let response = try JSONDecoder().decode(RateModel.self, from: data)
-//            let amount = response.conversionRate * amount
-//            return amount
-//        } catch {
-//            throw NetworkError.networkError(error)
-//        }
-        return 0.0 // zatichka! DELETE!!!!
+        guard let url = URL(string: Api.pair.rawValue + "\(name)/USD") else
+        { throw NetworkError.invalidURL }
+
+        do {
+            let (data, _) = try await URLSession.shared.data(from: url)
+            let response = try JSONDecoder().decode(RateModel.self, from: data)
+            let amount = response.conversionRate * amount
+            return amount
+        } catch {
+            throw NetworkError.networkError(error)
+        }
     }
     
     

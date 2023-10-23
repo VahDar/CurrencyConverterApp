@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FC6D588E2AE6E506003B6896 /* SelectedCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6D588D2AE6E506003B6896 /* SelectedCountry.swift */; };
+		FC6D58912AE6E624003B6896 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6D58902AE6E624003B6896 /* RealmService.swift */; };
 		FCC942A92AE40FC1005CF7F1 /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC942A82AE40FC1005CF7F1 /* NavigationBarView.swift */; };
 		FCC942AC2AE41038005CF7F1 /* SetupNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC942AB2AE41038005CF7F1 /* SetupNavBar.swift */; };
 		FCC942AE2AE4109E005CF7F1 /* ReusingSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC942AD2AE4109E005CF7F1 /* ReusingSearchBar.swift */; };
@@ -45,6 +46,7 @@
 
 /* Begin PBXFileReference section */
 		FC6D588D2AE6E506003B6896 /* SelectedCountry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedCountry.swift; sourceTree = "<group>"; };
+		FC6D58902AE6E624003B6896 /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
 		FCC942A82AE40FC1005CF7F1 /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
 		FCC942AB2AE41038005CF7F1 /* SetupNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupNavBar.swift; sourceTree = "<group>"; };
 		FCC942AD2AE4109E005CF7F1 /* ReusingSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusingSearchBar.swift; sourceTree = "<group>"; };
@@ -97,6 +99,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FC6D588F2AE6E5F1003B6896 /* RealmService */ = {
+			isa = PBXGroup;
+			children = (
+				FC6D58902AE6E624003B6896 /* RealmService.swift */,
+			);
+			path = RealmService;
+			sourceTree = "<group>";
+		};
 		FCC942AA2AE4101C005CF7F1 /* CustomComponents */ = {
 			isa = PBXGroup;
 			children = (
@@ -258,6 +268,7 @@
 				FCF5BB512AE169CA00BA6F6B /* TabBar */,
 				FCD9F3622AE2B0D000B2C790 /* CurrencyList */,
 				FCD9F3712AE2FCBD00B2C790 /* NetworkService */,
+				FC6D588F2AE6E5F1003B6896 /* RealmService */,
 				FCD9F3782AE2FD7200B2C790 /* Model */,
 				FCD9F37B2AE2FE7000B2C790 /* CountryCurrencies */,
 				FCC942AA2AE4101C005CF7F1 /* CustomComponents */,
@@ -406,6 +417,7 @@
 				FCD9F3752AE2FCF700B2C790 /* NetworkService.swift in Sources */,
 				FCC942BF2AE43486005CF7F1 /* WalletTableViewCell.swift in Sources */,
 				FCD9F35F2AE2AFE300B2C790 /* UIColor.swift in Sources */,
+				FC6D58912AE6E624003B6896 /* RealmService.swift in Sources */,
 				FCF5BB392AE1653800BA6F6B /* SceneDelegate.swift in Sources */,
 				FCC942BC2AE4344E005CF7F1 /* WalletViewController.swift in Sources */,
 				FCD9F37D2AE2FE9300B2C790 /* CountryCurrenciesModel.swift in Sources */,
