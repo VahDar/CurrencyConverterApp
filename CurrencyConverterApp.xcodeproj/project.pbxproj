@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC6D588E2AE6E506003B6896 /* SelectedCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6D588D2AE6E506003B6896 /* SelectedCountry.swift */; };
 		FCC942A92AE40FC1005CF7F1 /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC942A82AE40FC1005CF7F1 /* NavigationBarView.swift */; };
 		FCC942AC2AE41038005CF7F1 /* SetupNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC942AB2AE41038005CF7F1 /* SetupNavBar.swift */; };
 		FCC942AE2AE4109E005CF7F1 /* ReusingSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC942AD2AE4109E005CF7F1 /* ReusingSearchBar.swift */; };
@@ -43,6 +44,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FC6D588D2AE6E506003B6896 /* SelectedCountry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedCountry.swift; sourceTree = "<group>"; };
 		FCC942A82AE40FC1005CF7F1 /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
 		FCC942AB2AE41038005CF7F1 /* SetupNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupNavBar.swift; sourceTree = "<group>"; };
 		FCC942AD2AE4109E005CF7F1 /* ReusingSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusingSearchBar.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 			children = (
 				FCC942AB2AE41038005CF7F1 /* SetupNavBar.swift */,
 				FCC942AD2AE4109E005CF7F1 /* ReusingSearchBar.swift */,
+				FC6D588D2AE6E506003B6896 /* SelectedCountry.swift */,
 			);
 			path = CustomComponents;
 			sourceTree = "<group>";
@@ -107,9 +110,10 @@
 		FCC942B62AE43390005CF7F1 /* Wallet */ = {
 			isa = PBXGroup;
 			children = (
+				FCC942B72AE433A1005CF7F1 /* WalletCoordinator */,
 				FCC942BA2AE4342C005CF7F1 /* View */,
 				FCC942BD2AE4346F005CF7F1 /* Cell */,
-				FCC942B72AE433A1005CF7F1 /* WalletCoordinator */,
+				FCEA684A2AE5435100DB1240 /* ViewModel */,
 			);
 			path = Wallet;
 			sourceTree = "<group>";
@@ -250,7 +254,6 @@
 		FCF5BB352AE1653800BA6F6B /* CurrencyConverterApp */ = {
 			isa = PBXGroup;
 			children = (
-				FCEA684A2AE5435100DB1240 /* ViewModel */,
 				FCC942B62AE43390005CF7F1 /* Wallet */,
 				FCF5BB512AE169CA00BA6F6B /* TabBar */,
 				FCD9F3622AE2B0D000B2C790 /* CurrencyList */,
@@ -395,6 +398,7 @@
 				FCD9F37A2AE2FD8500B2C790 /* CurrencyListModel.swift in Sources */,
 				FCF5BB552AE16B3900BA6F6B /* TabBarController.swift in Sources */,
 				FCC942AC2AE41038005CF7F1 /* SetupNavBar.swift in Sources */,
+				FC6D588E2AE6E506003B6896 /* SelectedCountry.swift in Sources */,
 				FCD9F3682AE2B47300B2C790 /* CurrencyView.swift in Sources */,
 				FCD9F3612AE2B00600B2C790 /* Bundle-Decodable.swift in Sources */,
 				FCEA684C2AE5436400DB1240 /* WalletViewModel.swift in Sources */,
