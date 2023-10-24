@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC29E7D02AE7BAE700A9E3B5 /* AddCurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC29E7CF2AE7BAE700A9E3B5 /* AddCurrencyViewController.swift */; };
 		FC6D588E2AE6E506003B6896 /* SelectedCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6D588D2AE6E506003B6896 /* SelectedCountry.swift */; };
 		FC6D58912AE6E624003B6896 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6D58902AE6E624003B6896 /* RealmService.swift */; };
 		FC6D58932AE6E6E2003B6896 /* CurrencyUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6D58922AE6E6E2003B6896 /* CurrencyUtility.swift */; };
@@ -47,6 +48,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FC29E7CF2AE7BAE700A9E3B5 /* AddCurrencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCurrencyViewController.swift; sourceTree = "<group>"; };
 		FC6D588D2AE6E506003B6896 /* SelectedCountry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedCountry.swift; sourceTree = "<group>"; };
 		FC6D58902AE6E624003B6896 /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
 		FC6D58922AE6E6E2003B6896 /* CurrencyUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyUtility.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				FCC942BB2AE4344E005CF7F1 /* WalletViewController.swift */,
+				FC29E7CF2AE7BAE700A9E3B5 /* AddCurrencyViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -419,6 +422,7 @@
 				FCD9F3682AE2B47300B2C790 /* CurrencyView.swift in Sources */,
 				FCD9F3612AE2B00600B2C790 /* Bundle-Decodable.swift in Sources */,
 				FCEA684C2AE5436400DB1240 /* WalletViewModel.swift in Sources */,
+				FC29E7D02AE7BAE700A9E3B5 /* AddCurrencyViewController.swift in Sources */,
 				FCD9F3732AE2FCD800B2C790 /* NetworkError.swift in Sources */,
 				FCD9F3752AE2FCF700B2C790 /* NetworkService.swift in Sources */,
 				FCC942BF2AE43486005CF7F1 /* WalletTableViewCell.swift in Sources */,
