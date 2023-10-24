@@ -25,3 +25,12 @@ class WalletModel: Object {
         self.usdAmount = usdAmount
     }
 }
+
+
+struct RateModel: Codable {
+    let conversionRate: Double
+    
+    enum CodingKeys: String, CodingKey {
+        case conversionRate = "conversion_rate"
+    }
+}

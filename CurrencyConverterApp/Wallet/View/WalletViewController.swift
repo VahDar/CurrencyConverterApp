@@ -35,7 +35,7 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
         label.text = "Total Balance"
         label.textColor = .tabBarUnpressed
         label.numberOfLines = 0
-        label.font = UIFont(name: "Inter-Medium", size: 20)
+        label.font = UIFont(name: "Inter-Medium", size: 21)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -133,7 +133,6 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
     private func setupBalanceLabel() {
         let balanceWithSymbol = "USD".getSymbolForCurrencyCode() + String(format: "%.2f", viewModel.walletData.reduce(0) { $0 + $1.usdAmount })
         let attributedText = balanceWithSymbol.createHighlightedAttributedString()
-        print("BALANCe \(attributedText)")
         balanceLable.attributedText = attributedText
     }
     

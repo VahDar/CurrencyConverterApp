@@ -10,6 +10,10 @@
 		FC29E7D02AE7BAE700A9E3B5 /* AddCurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC29E7CF2AE7BAE700A9E3B5 /* AddCurrencyViewController.swift */; };
 		FC29E7D22AE7BDDB00A9E3B5 /* SelectCountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC29E7D12AE7BDDB00A9E3B5 /* SelectCountryTableViewCell.swift */; };
 		FC29E7D42AE7CAF300A9E3B5 /* SelectCountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC29E7D32AE7CAF300A9E3B5 /* SelectCountryViewController.swift */; };
+		FC29E7D52AE81AAC00A9E3B5 /* Inter-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = FCD9F35C2AE2AEDB00B2C790 /* Inter-Medium.otf */; };
+		FC29E7D62AE81AB400A9E3B5 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FCD9F35B2AE2AEDB00B2C790 /* Montserrat-Regular.ttf */; };
+		FC29E7D72AE81AB800A9E3B5 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FCD9F35A2AE2AEDB00B2C790 /* Montserrat-SemiBold.ttf */; };
+		FC29E7D82AE81ABC00A9E3B5 /* Montserrat.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FCD9F3592AE2AEDB00B2C790 /* Montserrat.ttf */; };
 		FC6D588E2AE6E506003B6896 /* SelectedCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6D588D2AE6E506003B6896 /* SelectedCountry.swift */; };
 		FC6D58912AE6E624003B6896 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6D58902AE6E624003B6896 /* RealmService.swift */; };
 		FC6D58932AE6E6E2003B6896 /* CurrencyUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6D58922AE6E6E2003B6896 /* CurrencyUtility.swift */; };
@@ -367,7 +371,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					FCF5BB322AE1653800BA6F6B = {
 						CreatedOnToolsVersion = 14.3;
@@ -400,9 +404,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC29E7D72AE81AB800A9E3B5 /* Montserrat-SemiBold.ttf in Resources */,
 				FCF5BB432AE1653B00BA6F6B /* LaunchScreen.storyboard in Resources */,
 				FCF5BB402AE1653B00BA6F6B /* Assets.xcassets in Resources */,
 				FCD9F3812AE3000C00B2C790 /* CountryCurrencies.json in Resources */,
+				FC29E7D82AE81ABC00A9E3B5 /* Montserrat.ttf in Resources */,
+				FC29E7D62AE81AB400A9E3B5 /* Montserrat-Regular.ttf in Resources */,
+				FC29E7D52AE81AAC00A9E3B5 /* Inter-Medium.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -501,6 +509,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -561,6 +570,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
