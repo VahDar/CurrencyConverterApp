@@ -7,7 +7,7 @@
 
 import Foundation
 
-typealias NetworkServiceProtocol = NetworkingCurrencyListProtocol & NetworkingWalletProtocol & NetworjingBidsProtocol
+typealias NetworkServiceProtocol = NetworkingCurrencyListProtocol & NetworkingWalletProtocol & NetworkingBidsProtocol
 
 protocol NetworkingCurrencyListProtocol {
     func fetchCurrencyList(for name: String) async throws -> CurrencyListModel

@@ -23,7 +23,7 @@ class WalletCoordinator: Coordinator {
     func start() {
         goToWallet()
         addChildCoordinator(self)
-//        goToSubScreen()
+        goToSubScreen()
     }
     
     func finish() {
@@ -38,29 +38,29 @@ class WalletCoordinator: Coordinator {
         navigationController.pushViewController(viewController, animated: true)
     }
     
-//    private func goToAddCurrency() {
-//        let viewController = AddCurrencyViewController()
-//        viewController.viewModel = viewModel
-//        navigationController.pushViewController(viewController, animated: true)
-//    }
+    private func goToAddCurrency() {
+        let viewController = AddCurrencyViewController()
+        viewController.viewModel = viewModel
+        navigationController.pushViewController(viewController, animated: true)
+    }
     
-//    private func goToSelectScreen() {
-//        let viewController = SelectCountryViewController()
-//        viewController.viewModel = viewModel
-//        navigationController.pushViewController(viewController, animated: true)
-//    }
+    private func goToSelectScreen() {
+        let viewController = SelectCountryViewController()
+        viewController.viewModel = viewModel
+        navigationController.pushViewController(viewController, animated: true)
+    }
     
     private func backToPreviousScreen() {
         navigationController.popViewController(animated: true)
     }
     
     private func goToSubScreen() {
-//        viewModel.onAddCurrency = { [weak self] in
-//            self?.goToAddCurrency()
-//        }
-//        viewModel.onSelect = { [weak self] in
-//            self?.goToSelectScreen()
-//        }
+        viewModel.onAddCurrency = { [weak self] in
+            self?.goToAddCurrency()
+        }
+        viewModel.onSelect = { [weak self] in
+            self?.goToSelectScreen()
+        }
         viewModel.backAction = { [weak self] in
             self?.backToPreviousScreen()
         }
