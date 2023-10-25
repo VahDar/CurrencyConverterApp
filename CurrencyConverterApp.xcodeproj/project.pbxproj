@@ -14,6 +14,7 @@
 		FC29E7D62AE81AB400A9E3B5 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FCD9F35B2AE2AEDB00B2C790 /* Montserrat-Regular.ttf */; };
 		FC29E7D72AE81AB800A9E3B5 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FCD9F35A2AE2AEDB00B2C790 /* Montserrat-SemiBold.ttf */; };
 		FC29E7D82AE81ABC00A9E3B5 /* Montserrat.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FCD9F3592AE2AEDB00B2C790 /* Montserrat.ttf */; };
+		FC349D4F2AE96E2E007141FD /* BidsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC349D4E2AE96E2E007141FD /* BidsCoordinator.swift */; };
 		FC6D588E2AE6E506003B6896 /* SelectedCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6D588D2AE6E506003B6896 /* SelectedCountry.swift */; };
 		FC6D58912AE6E624003B6896 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6D58902AE6E624003B6896 /* RealmService.swift */; };
 		FC6D58932AE6E6E2003B6896 /* CurrencyUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6D58922AE6E6E2003B6896 /* CurrencyUtility.swift */; };
@@ -57,6 +58,7 @@
 		FC29E7CF2AE7BAE700A9E3B5 /* AddCurrencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCurrencyViewController.swift; sourceTree = "<group>"; };
 		FC29E7D12AE7BDDB00A9E3B5 /* SelectCountryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCountryTableViewCell.swift; sourceTree = "<group>"; };
 		FC29E7D32AE7CAF300A9E3B5 /* SelectCountryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCountryViewController.swift; sourceTree = "<group>"; };
+		FC349D4E2AE96E2E007141FD /* BidsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BidsCoordinator.swift; sourceTree = "<group>"; };
 		FC6D588D2AE6E506003B6896 /* SelectedCountry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedCountry.swift; sourceTree = "<group>"; };
 		FC6D58902AE6E624003B6896 /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
 		FC6D58922AE6E6E2003B6896 /* CurrencyUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyUtility.swift; sourceTree = "<group>"; };
@@ -113,6 +115,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FC349D4C2AE96DF5007141FD /* Bids */ = {
+			isa = PBXGroup;
+			children = (
+				FC349D4D2AE96E0D007141FD /* BidsCoordinator */,
+			);
+			path = Bids;
+			sourceTree = "<group>";
+		};
+		FC349D4D2AE96E0D007141FD /* BidsCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				FC349D4E2AE96E2E007141FD /* BidsCoordinator.swift */,
+			);
+			path = BidsCoordinator;
+			sourceTree = "<group>";
+		};
 		FC6D588F2AE6E5F1003B6896 /* RealmService */ = {
 			isa = PBXGroup;
 			children = (
@@ -283,9 +301,10 @@
 		FCF5BB352AE1653800BA6F6B /* CurrencyConverterApp */ = {
 			isa = PBXGroup;
 			children = (
+				FC349D4C2AE96DF5007141FD /* Bids */,
 				FCC942B62AE43390005CF7F1 /* Wallet */,
-				FCF5BB512AE169CA00BA6F6B /* TabBar */,
 				FCD9F3622AE2B0D000B2C790 /* CurrencyList */,
+				FCF5BB512AE169CA00BA6F6B /* TabBar */,
 				FCD9F3712AE2FCBD00B2C790 /* NetworkService */,
 				FC6D588F2AE6E5F1003B6896 /* RealmService */,
 				FCD9F3782AE2FD7200B2C790 /* Model */,
@@ -451,6 +470,7 @@
 				FCD9F36A2AE2B4A900B2C790 /* CurrencyViewCell.swift in Sources */,
 				FC6D58932AE6E6E2003B6896 /* CurrencyUtility.swift in Sources */,
 				FC6D58952AE6E733003B6896 /* StringFormatter.swift in Sources */,
+				FC349D4F2AE96E2E007141FD /* BidsCoordinator.swift in Sources */,
 				FCD9F3772AE2FD5200B2C790 /* Endpoint.swift in Sources */,
 				FCC942B02AE411A8005CF7F1 /* WalletModel.swift in Sources */,
 				FCD9F3702AE2EEFF00B2C790 /* CurrencyListViewModel.swift in Sources */,
