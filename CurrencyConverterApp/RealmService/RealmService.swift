@@ -11,8 +11,8 @@ import RealmSwift
 protocol RealmServiceProtocol {
     func saveWallet(model: WalletModel)
     func loadWallet() async throws -> [WalletModel]
-    func saveBid(model: BidsModel)
-    func loadBid() async throws -> [BidsModel]
+    func saveBid(model: BidModel)
+    func loadBid() async throws -> [BidModel]
 }
 
 final class RealmService: RealmServiceProtocol {
@@ -32,7 +32,7 @@ final class RealmService: RealmServiceProtocol {
     }
     
     @MainActor
-    func saveBid(model: BidsModel) {
+    func saveBid(model: BidModel) {
         let realm = try! Realm()
         try! realm.write {
         realm.add(model, update: .modified)
@@ -40,9 +40,9 @@ final class RealmService: RealmServiceProtocol {
     }
     
     @MainActor
-    func loadBid() async throws -> [BidsModel] {
+    func loadBid() async throws -> [BidModel] {
         let realm = try await Realm()
-        let item = realm.objects(BidsModel.self)
+        let item = realm.objects(BidModel.self)
         return Array(item)
     }
 }

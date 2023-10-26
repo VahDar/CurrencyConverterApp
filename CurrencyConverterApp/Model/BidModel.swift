@@ -8,7 +8,7 @@
 import Foundation
 import RealmSwift
 
-class BidsModel: Object {
+class BidModel: Object {
     @Persisted(primaryKey: true) var id = UUID().uuidString
     @Persisted var fromCode: String = ""
     @Persisted var toCode: String = ""

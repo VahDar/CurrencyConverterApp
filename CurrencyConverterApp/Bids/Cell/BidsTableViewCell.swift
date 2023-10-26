@@ -85,7 +85,7 @@ class BidsTableViewCell: UITableViewCell {
     
     //MARK: - Flow func
     
-    func configure(_ model: BidsModel) {
+    func configure(_ model: BidModel) {
         fromCountryImage.image = UIImage(named: model.fromCode)
         toCountryImage.image = UIImage(named: model.toCode)
         fromAmountLabel.attributedText = (model.fromCode.getSymbolForCurrencyCode() + model.stringFromAmount).createHighlightedAttributedString()

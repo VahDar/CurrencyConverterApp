@@ -15,13 +15,14 @@
 		FC29E7D72AE81AB800A9E3B5 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FCD9F35A2AE2AEDB00B2C790 /* Montserrat-SemiBold.ttf */; };
 		FC29E7D82AE81ABC00A9E3B5 /* Montserrat.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FCD9F3592AE2AEDB00B2C790 /* Montserrat.ttf */; };
 		FC349D4F2AE96E2E007141FD /* BidsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC349D4E2AE96E2E007141FD /* BidsCoordinator.swift */; };
-		FC349D512AE97349007141FD /* BidsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC349D502AE97349007141FD /* BidsModel.swift */; };
+		FC349D512AE97349007141FD /* BidModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC349D502AE97349007141FD /* BidModel.swift */; };
 		FC349D552AE978E5007141FD /* BidsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC349D542AE978E5007141FD /* BidsTableViewCell.swift */; };
 		FC6D588E2AE6E506003B6896 /* SelectedCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6D588D2AE6E506003B6896 /* SelectedCountry.swift */; };
 		FC6D58912AE6E624003B6896 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6D58902AE6E624003B6896 /* RealmService.swift */; };
 		FC6D58932AE6E6E2003B6896 /* CurrencyUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6D58922AE6E6E2003B6896 /* CurrencyUtility.swift */; };
 		FC6D58952AE6E733003B6896 /* StringFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6D58942AE6E733003B6896 /* StringFormatter.swift */; };
 		FC724AA22AEAB26D0061FD9D /* BidsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC724AA12AEAB26D0061FD9D /* BidsViewController.swift */; };
+		FC724AA52AEAB6520061FD9D /* BidViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC724AA42AEAB6520061FD9D /* BidViewModel.swift */; };
 		FCC942A92AE40FC1005CF7F1 /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC942A82AE40FC1005CF7F1 /* NavigationBarView.swift */; };
 		FCC942AC2AE41038005CF7F1 /* SetupNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC942AB2AE41038005CF7F1 /* SetupNavBar.swift */; };
 		FCC942AE2AE4109E005CF7F1 /* ReusingSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC942AD2AE4109E005CF7F1 /* ReusingSearchBar.swift */; };
@@ -62,13 +63,14 @@
 		FC29E7D12AE7BDDB00A9E3B5 /* SelectCountryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCountryTableViewCell.swift; sourceTree = "<group>"; };
 		FC29E7D32AE7CAF300A9E3B5 /* SelectCountryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCountryViewController.swift; sourceTree = "<group>"; };
 		FC349D4E2AE96E2E007141FD /* BidsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BidsCoordinator.swift; sourceTree = "<group>"; };
-		FC349D502AE97349007141FD /* BidsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BidsModel.swift; sourceTree = "<group>"; };
+		FC349D502AE97349007141FD /* BidModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BidModel.swift; sourceTree = "<group>"; };
 		FC349D542AE978E5007141FD /* BidsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BidsTableViewCell.swift; sourceTree = "<group>"; };
 		FC6D588D2AE6E506003B6896 /* SelectedCountry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedCountry.swift; sourceTree = "<group>"; };
 		FC6D58902AE6E624003B6896 /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
 		FC6D58922AE6E6E2003B6896 /* CurrencyUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyUtility.swift; sourceTree = "<group>"; };
 		FC6D58942AE6E733003B6896 /* StringFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringFormatter.swift; sourceTree = "<group>"; };
 		FC724AA12AEAB26D0061FD9D /* BidsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BidsViewController.swift; sourceTree = "<group>"; };
+		FC724AA42AEAB6520061FD9D /* BidViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BidViewModel.swift; sourceTree = "<group>"; };
 		FCC942A82AE40FC1005CF7F1 /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
 		FCC942AB2AE41038005CF7F1 /* SetupNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupNavBar.swift; sourceTree = "<group>"; };
 		FCC942AD2AE4109E005CF7F1 /* ReusingSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusingSearchBar.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 		FC349D4C2AE96DF5007141FD /* Bids */ = {
 			isa = PBXGroup;
 			children = (
+				FC724AA32AEAB63B0061FD9D /* ViewModel */,
 				FC349D532AE978C6007141FD /* Cell */,
 				FC349D522AE978B1007141FD /* View */,
 				FC349D4D2AE96E0D007141FD /* BidsCoordinator */,
@@ -161,6 +164,14 @@
 				FC6D58902AE6E624003B6896 /* RealmService.swift */,
 			);
 			path = RealmService;
+			sourceTree = "<group>";
+		};
+		FC724AA32AEAB63B0061FD9D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FC724AA42AEAB6520061FD9D /* BidViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		FCC942AA2AE4101C005CF7F1 /* CustomComponents */ = {
@@ -285,7 +296,7 @@
 			children = (
 				FCD9F3792AE2FD8500B2C790 /* CurrencyListModel.swift */,
 				FCC942AF2AE411A8005CF7F1 /* WalletModel.swift */,
-				FC349D502AE97349007141FD /* BidsModel.swift */,
+				FC349D502AE97349007141FD /* BidModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -475,12 +486,13 @@
 				FCF5BB572AE16C2F00BA6F6B /* TabBarCoordinator.swift in Sources */,
 				FC29E7D22AE7BDDB00A9E3B5 /* SelectCountryTableViewCell.swift in Sources */,
 				FCD9F37A2AE2FD8500B2C790 /* CurrencyListModel.swift in Sources */,
-				FC349D512AE97349007141FD /* BidsModel.swift in Sources */,
+				FC349D512AE97349007141FD /* BidModel.swift in Sources */,
 				FCF5BB552AE16B3900BA6F6B /* TabBarController.swift in Sources */,
 				FCC942AC2AE41038005CF7F1 /* SetupNavBar.swift in Sources */,
 				FC6D588E2AE6E506003B6896 /* SelectedCountry.swift in Sources */,
 				FCD9F3682AE2B47300B2C790 /* CurrencyView.swift in Sources */,
 				FCD9F3612AE2B00600B2C790 /* Bundle-Decodable.swift in Sources */,
+				FC724AA52AEAB6520061FD9D /* BidViewModel.swift in Sources */,
 				FCEA684C2AE5436400DB1240 /* WalletViewModel.swift in Sources */,
 				FC349D552AE978E5007141FD /* BidsTableViewCell.swift in Sources */,
 				FC29E7D02AE7BAE700A9E3B5 /* AddCurrencyViewController.swift in Sources */,
