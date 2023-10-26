@@ -21,6 +21,7 @@
 		FC6D58912AE6E624003B6896 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6D58902AE6E624003B6896 /* RealmService.swift */; };
 		FC6D58932AE6E6E2003B6896 /* CurrencyUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6D58922AE6E6E2003B6896 /* CurrencyUtility.swift */; };
 		FC6D58952AE6E733003B6896 /* StringFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6D58942AE6E733003B6896 /* StringFormatter.swift */; };
+		FC724AA22AEAB26D0061FD9D /* BidsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC724AA12AEAB26D0061FD9D /* BidsViewController.swift */; };
 		FCC942A92AE40FC1005CF7F1 /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC942A82AE40FC1005CF7F1 /* NavigationBarView.swift */; };
 		FCC942AC2AE41038005CF7F1 /* SetupNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC942AB2AE41038005CF7F1 /* SetupNavBar.swift */; };
 		FCC942AE2AE4109E005CF7F1 /* ReusingSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC942AD2AE4109E005CF7F1 /* ReusingSearchBar.swift */; };
@@ -67,6 +68,7 @@
 		FC6D58902AE6E624003B6896 /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
 		FC6D58922AE6E6E2003B6896 /* CurrencyUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyUtility.swift; sourceTree = "<group>"; };
 		FC6D58942AE6E733003B6896 /* StringFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringFormatter.swift; sourceTree = "<group>"; };
+		FC724AA12AEAB26D0061FD9D /* BidsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BidsViewController.swift; sourceTree = "<group>"; };
 		FCC942A82AE40FC1005CF7F1 /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
 		FCC942AB2AE41038005CF7F1 /* SetupNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupNavBar.swift; sourceTree = "<group>"; };
 		FCC942AD2AE4109E005CF7F1 /* ReusingSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusingSearchBar.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 		FC349D522AE978B1007141FD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FC724AA12AEAB26D0061FD9D /* BidsViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -493,6 +496,7 @@
 				FCF5BB4E2AE1668E00BA6F6B /* Coordinator.swift in Sources */,
 				FCD9F36A2AE2B4A900B2C790 /* CurrencyViewCell.swift in Sources */,
 				FC6D58932AE6E6E2003B6896 /* CurrencyUtility.swift in Sources */,
+				FC724AA22AEAB26D0061FD9D /* BidsViewController.swift in Sources */,
 				FC6D58952AE6E733003B6896 /* StringFormatter.swift in Sources */,
 				FC349D4F2AE96E2E007141FD /* BidsCoordinator.swift in Sources */,
 				FCD9F3772AE2FD5200B2C790 /* Endpoint.swift in Sources */,

@@ -18,7 +18,7 @@ protocol NetworkingWalletProtocol {
 }
 
 protocol NetworkingBidsProtocol {
-    
+    func getBid(from: String, to: String, amount: Double) async throws -> Double
 }
 
 final class NetworkingService: NetworkServiceProtocol  {
@@ -48,5 +48,16 @@ final class NetworkingService: NetworkServiceProtocol  {
         }
     }
     
+    func getBid(from: String, to: String, amount: Double) async throws -> Double {
+        guard let url = URL(string: Api.pair.rawValue + from + "/" + to) else { throw NetworkError.invalidURL }
+        do {
+            let (data, _) = try await URLSession.shared.data(from: url)
+            let response = try JSONDecoder().decode(RateModel.self, from: data)
+            let amount = response.conversionRate * amount
+            return amount
+        } catch {
+            throw NetworkError.networkError(error)
+        }
+    }
     
 }
