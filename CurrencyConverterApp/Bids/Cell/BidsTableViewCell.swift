@@ -56,10 +56,57 @@ class BidsTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         [fromCountryImage, toCountryImage, caseButton, currencyNameLabel, toAmountLabel, fromAmountLabel].forEach(contentView.addSubview)
+        
+        NSLayoutConstraint.activate([
+            fromCountryImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 18),
+            fromCountryImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            fromCountryImage.heightAnchor.constraint(equalToConstant: 34),
+            fromCountryImage.widthAnchor.constraint(equalToConstant: 34),
+            toCountryImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 18),
+            toCountryImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 43),
+            toCountryImage.heightAnchor.constraint(equalToConstant: 34),
+            toCountryImage.widthAnchor.constraint(equalToConstant: 34),
+            caseButton.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 18),
+            caseButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            caseButton.heightAnchor.constraint(equalToConstant: 34),
+            caseButton.widthAnchor.constraint(equalToConstant: 68),
+            currencyNameLabel.topAnchor.constraint(equalTo: fromCountryImage.bottomAnchor, constant: 21),
+            currencyNameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            fromAmountLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -18),
+            fromAmountLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            toAmountLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            toAmountLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -18)
+        ])
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    //MARK: - Flow func
+    
+    func configure(_ model: BidsModel) {
+        fromCountryImage.image = UIImage(named: model.fromCode)
+        toCountryImage.image = UIImage(named: model.toCode)
+        fromAmountLabel.attributedText = (model.fromCode.getSymbolForCurrencyCode() + model.stringFromAmount).createHighlightedAttributedString()
+        toAmountLabel.attributedText = (model.toCode.getSymbolForCurrencyCode() + model.stringToAmount).createHighlightedAttributedString()
+        let currencyCode = model.fromCode + "/" + model.toCode
+        let attributedString = NSMutableAttributedString(string: currencyCode)
+        let range = (currencyCode as NSString).range(of: "/")
+        attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.tabBarUnpressed, range: range)
+        currencyNameLabel.attributedText = attributedString
+        setCaseStatus(for: model.isOpen)
+    }
+    
+    private func setCaseStatus( for isOpen: Bool) {
+        if isOpen {
+            caseButton.backgroundColor = .caseOpen
+            caseButton.tintColor = .tintOpen
+            caseButton.setTitle("Open", for: .normal)
+        } else {
+            caseButton.backgroundColor = .caseClosed
+            caseButton.tintColor = .tabBarUnpressed
+            caseButton.setTitle("Closed", for: .normal)
+        }
+    }
 }

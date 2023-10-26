@@ -16,7 +16,7 @@ class BidsModel: Object {
     @Persisted var toAmount: Double = 0.0
     @Persisted var isOpen: Bool = false
     
-    var stringFormAmount: String {
+    var stringFromAmount: String {
         return String(format: "%.2f", fromAmount)
     }
     
