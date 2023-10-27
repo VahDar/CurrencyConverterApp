@@ -26,6 +26,7 @@ class BidsTableViewCell: UITableViewCell {
        let label = UILabel()
         label.font = UIFont(name: "Inter-Medium", size: 15)
         label.translatesAutoresizingMaskIntoConstraints = false
+        return label
     }()
     
     private let caseButton: UIButton = {

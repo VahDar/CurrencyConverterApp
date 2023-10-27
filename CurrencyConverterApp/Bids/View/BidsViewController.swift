@@ -30,6 +30,7 @@ class BidsViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidLoad()
         fetchData()
         setupUI()
+        useSetupNavBar()
     }
     
     private func fetchData() {
@@ -92,6 +93,6 @@ class BidsViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let filteredBids = viewModel.data.filter { ($0.fromCode + $0.toCode).lowercased().contains(viewModel.searchText.lowercased()) }
         let model = filteredBids[indexPath.row]
-        viewModel.realmService.saveBid(model: model)
+        viewModel.realmService?.saveBid(model: model)
     }
 }

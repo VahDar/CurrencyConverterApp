@@ -20,6 +20,7 @@ class TabBarCoordinator: Coordinator {
     func start() {
         currencyList()
         walletScreen()
+        bidsScreen() 
     }
     
     func finish() {
@@ -38,6 +39,14 @@ class TabBarCoordinator: Coordinator {
         let networkService = NetworkingService()
         let viewModel = WalletViewModel(networkService: networkService, realmService: realmService)
         let coordinator = WalletCoordinator(navigationController: UINavigationController(), viewModel: viewModel)
+        tabBarController.viewControllers?.append(coordinator.navigationController)
+        addChildCoordinator(coordinator)
+        coordinator.start()
+    }
+    
+    private func bidsScreen() {
+        let viewModel = BidViewModel()
+        let coordinator = BidsCoordinator(UINavigationController(), viewModel: viewModel)
         tabBarController.viewControllers?.append(coordinator.navigationController)
         addChildCoordinator(coordinator)
         coordinator.start()
