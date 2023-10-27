@@ -70,10 +70,28 @@ class BidsViewController: UIViewController, UITableViewDelegate, UITableViewData
         } handler: { [weak self] searchText in
             self?.viewModel.searchText = searchText
         }
-
     }
 
-    
+    //MARK: - Setup TableView
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if viewModel.searchText.isEmpty {
+            return viewModel.data.count
+        } else {
+            return viewModel.data.filter { ($0.fromCode + $0.toCode).lowercased().contains(viewModel.searchText.lowercased()) }.count
+        }
+    }
    
-
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = BidsTableViewCell(style: .default, reuseIdentifier: String(describing: BidsTableViewCell.self))
+        let filtredBids = viewModel.data.filter { ($0.fromCode + $0.toCode).lowercased().contains(viewModel.searchText.lowercased())}
+        let item = filtredBids[indexPath.row]
+        cell.configure(item)
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let filteredBids = viewModel.data.filter { ($0.fromCode + $0.toCode).lowercased().contains(viewModel.searchText.lowercased()) }
+        let model = filteredBids[indexPath.row]
+        viewModel.realmService.saveBid(model: model)
+    }
 }
