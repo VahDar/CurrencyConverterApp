@@ -15,6 +15,7 @@ protocol WalletViewProtocol: AnyObject {
 
 class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, WalletViewProtocol {
     
+    
     //MARK: - Properties
     var viewModel: WalletViewModelProtocol!
     let searchBar = ReusingSearchBar()

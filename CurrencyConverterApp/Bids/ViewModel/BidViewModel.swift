@@ -12,7 +12,7 @@ protocol BidViewModelProtocol: SelectViewModelProtocol {
     var onSelected: (() -> Void)? { get set }
     var onAction: (() -> Void)? { get set }
     var target: Target { get set }
-    var searchText: String { get }
+    var searchText: String { get set }
     var fromCode: String { get set }
     var toCode: String { get set }
     var data: [BidModel] { get set }
@@ -20,6 +20,7 @@ protocol BidViewModelProtocol: SelectViewModelProtocol {
     var networkingService: NetworkServiceProtocol! { get set }
     var didSelectCountry: ((String, CountryCurrenciesModel) -> Void)? { get set }
     func fetchBidData(fromCode: String, toCode: String, amount: Double) async throws
+    func loadData() async
 }
 
 final class BidViewModel: BidViewModelProtocol {

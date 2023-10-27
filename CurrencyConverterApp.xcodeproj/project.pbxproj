@@ -126,10 +126,10 @@
 		FC349D4C2AE96DF5007141FD /* Bids */ = {
 			isa = PBXGroup;
 			children = (
-				FC724AA32AEAB63B0061FD9D /* ViewModel */,
-				FC349D532AE978C6007141FD /* Cell */,
-				FC349D522AE978B1007141FD /* View */,
 				FC349D4D2AE96E0D007141FD /* BidsCoordinator */,
+				FC349D522AE978B1007141FD /* View */,
+				FC349D532AE978C6007141FD /* Cell */,
+				FC724AA32AEAB63B0061FD9D /* ViewModel */,
 			);
 			path = Bids;
 			sourceTree = "<group>";
