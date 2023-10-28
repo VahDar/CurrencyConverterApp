@@ -83,6 +83,34 @@ class AddBidViewController: UIViewController {
     }
     
     //MARK: - Constreins
+    private func constreints() {
+        [titleLabel, amountTextField, fromLabel, toLabel, formCountryView, toCountryView].forEach(view.addSubview)
+        
+        NSLayoutConstraint.activate([
+            titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 18),
+            titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            amountTextField.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 18),
+            amountTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            amountTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            amountTextField.heightAnchor.constraint(equalToConstant: 40),
+            fromLabel.topAnchor.constraint(equalTo: amountTextField.bottomAnchor, constant: 16),
+            fromLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            formCountryView.topAnchor.constraint(equalTo: fromLabel.bottomAnchor, constant: 9),
+            formCountryView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            formCountryView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            formCountryView.heightAnchor.constraint(equalToConstant: 76),
+            toLabel.topAnchor.constraint(equalTo: formCountryView.bottomAnchor, constant: 18),
+            toLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            toCountryView.topAnchor.constraint(equalTo: toLabel.bottomAnchor, constant: 9),
+            toCountryView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            toCountryView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            toCountryView.heightAnchor.constraint(equalToConstant: 76),
+            addButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -22),
+            addButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            addButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            addButton.heightAnchor.constraint(equalToConstant: 40)
+        ])
+    }
 
  
 
