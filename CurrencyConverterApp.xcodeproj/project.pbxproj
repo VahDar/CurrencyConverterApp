@@ -47,6 +47,7 @@
 		FCD9F37F2AE2FECF00B2C790 /* CountryCurrenciesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9F37E2AE2FECF00B2C790 /* CountryCurrenciesManager.swift */; };
 		FCD9F3812AE3000C00B2C790 /* CountryCurrencies.json in Resources */ = {isa = PBXBuildFile; fileRef = FCD9F3802AE3000C00B2C790 /* CountryCurrencies.json */; };
 		FCEA684C2AE5436400DB1240 /* WalletViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA684B2AE5436400DB1240 /* WalletViewModel.swift */; };
+		FCF5A6152AED07EB003297AE /* AddBidViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF5A6142AED07EA003297AE /* AddBidViewController.swift */; };
 		FCF5BB372AE1653800BA6F6B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF5BB362AE1653800BA6F6B /* AppDelegate.swift */; };
 		FCF5BB392AE1653800BA6F6B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF5BB382AE1653800BA6F6B /* SceneDelegate.swift */; };
 		FCF5BB402AE1653B00BA6F6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCF5BB3F2AE1653B00BA6F6B /* Assets.xcassets */; };
@@ -97,6 +98,7 @@
 		FCD9F37E2AE2FECF00B2C790 /* CountryCurrenciesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCurrenciesManager.swift; sourceTree = "<group>"; };
 		FCD9F3802AE3000C00B2C790 /* CountryCurrencies.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CountryCurrencies.json; sourceTree = "<group>"; };
 		FCEA684B2AE5436400DB1240 /* WalletViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewModel.swift; sourceTree = "<group>"; };
+		FCF5A6142AED07EA003297AE /* AddBidViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBidViewController.swift; sourceTree = "<group>"; };
 		FCF5BB332AE1653800BA6F6B /* CurrencyConverterApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrencyConverterApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCF5BB362AE1653800BA6F6B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCF5BB382AE1653800BA6F6B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				FC724AA12AEAB26D0061FD9D /* BidsViewController.swift */,
+				FCF5A6142AED07EA003297AE /* AddBidViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -496,6 +499,7 @@
 				FCEA684C2AE5436400DB1240 /* WalletViewModel.swift in Sources */,
 				FC349D552AE978E5007141FD /* BidsTableViewCell.swift in Sources */,
 				FC29E7D02AE7BAE700A9E3B5 /* AddCurrencyViewController.swift in Sources */,
+				FCF5A6152AED07EB003297AE /* AddBidViewController.swift in Sources */,
 				FCD9F3732AE2FCD800B2C790 /* NetworkError.swift in Sources */,
 				FCD9F3752AE2FCF700B2C790 /* NetworkService.swift in Sources */,
 				FCC942BF2AE43486005CF7F1 /* WalletTableViewCell.swift in Sources */,
