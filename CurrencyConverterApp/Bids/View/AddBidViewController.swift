@@ -79,13 +79,19 @@ class AddBidViewController: UIViewController {
     //MARK: - Lifecycle funcs
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupCustomNavBar()
+        constreints()
+        bindViewModels()
+        addCountrySelectionTapGesture()
+        checkInput()
 
-        // Do any additional setup after loading the view.
     }
     
     //MARK: - Constreins
     private func constreints() {
-        [titleLabel, amountTextField, fromLabel, toLabel, fromCountryView, toCountryView].forEach(view.addSubview)
+        navigationItem.hidesBackButton = true
+        view.backgroundColor = .white
+        [titleLabel, amountTextField, fromLabel, toLabel, fromCountryView, toCountryView, addButton].forEach(view.addSubview)
         
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 18),
@@ -174,5 +180,32 @@ class AddBidViewController: UIViewController {
             try? await self.viewModel.fetchBidData(fromCode: self.viewModel.fromCode, toCode: self.viewModel.toCode, amount: amount)
         }
         viewModel.backAction?()
+    }
+    
+    private func checkInput() {
+        amountTextField.addTarget(self, action: #selector(textFieldDidchanged), for: .editingChanged)
+        if viewModel != nil {
+            self.updateAddButtonState(isValid: !amountTextField.text!.isEmpty, isSelected: self.fromCountryView.isSelected && self.toCountryView.isSelected)
+        } else {
+            print("Select country in checkInput = nil")
+        }
+    }
+    
+    @objc private func textFieldDidchanged(_ textField: UITextField) {
+        if viewModel != nil {
+            updateAddButtonState(isValid: !textField.text!.isEmpty, isSelected: self.fromCountryView.isSelected && self.toCountryView.isSelected)
+        } else {
+            print(("Select country in textFieldDidChange = nil"))
+        }
+    }
+    
+    private func updateAddButtonState(isValid: Bool, isSelected: Bool) {
+        if isValid, isSelected {
+            self.addButton.backgroundColor = .blue
+            self.addButton.isEnabled = true
+        } else {
+            self.addButton.backgroundColor = .tabBarUnpressed
+            self.addButton.isEnabled = false
+        }
     }
 }

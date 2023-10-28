@@ -20,6 +20,8 @@ class BidsCoordinator: Coordinator {
     
     func start() {
         goToBids()
+        addChildCoordinator(self)
+        goToSubScreen()
     }
     
     func finish() {
@@ -32,6 +34,27 @@ class BidsCoordinator: Coordinator {
         viewController.viewModel = viewModel
         navigationController.tabBarItem = UITabBarItem(title: nil, image: TabBarItem.bids.imageItems, tag: 2)
         navigationController.pushViewController(viewController, animated: true)
+    }
+    
+    private func goToAddScreen() {
+        let viewCOntroller = AddBidViewController()
+        viewCOntroller.viewModel = viewModel
+        navigationController.pushViewController(viewCOntroller, animated: true)
+    }
+    
+    private func goToSelectScreen() {
+        let viewController = SelectCountryViewController()
+        viewController.viewModel = viewModel
+        navigationController.pushViewController(viewController, animated: true)
+    }
+    
+    private func goToSubScreen() {
+        viewModel.addBidAction = { [weak self] in
+            self?.goToAddScreen()
+        }
+        viewModel.onSelected = { [weak self] in
+            self?.goToSelectScreen()
+        }
     }
     
 }
