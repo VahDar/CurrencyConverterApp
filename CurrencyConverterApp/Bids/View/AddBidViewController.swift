@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class AddBidViewController: UIViewController {
 
@@ -52,7 +53,7 @@ class AddBidViewController: UIViewController {
         return label
     }()
     
-    private let formCountryView: SelectedCountry! = {
+    private let fromCountryView: SelectedCountry! = {
         let view = SelectedCountry()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -84,7 +85,7 @@ class AddBidViewController: UIViewController {
     
     //MARK: - Constreins
     private func constreints() {
-        [titleLabel, amountTextField, fromLabel, toLabel, formCountryView, toCountryView].forEach(view.addSubview)
+        [titleLabel, amountTextField, fromLabel, toLabel, fromCountryView, toCountryView].forEach(view.addSubview)
         
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 18),
@@ -95,11 +96,11 @@ class AddBidViewController: UIViewController {
             amountTextField.heightAnchor.constraint(equalToConstant: 40),
             fromLabel.topAnchor.constraint(equalTo: amountTextField.bottomAnchor, constant: 16),
             fromLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            formCountryView.topAnchor.constraint(equalTo: fromLabel.bottomAnchor, constant: 9),
-            formCountryView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            formCountryView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            formCountryView.heightAnchor.constraint(equalToConstant: 76),
-            toLabel.topAnchor.constraint(equalTo: formCountryView.bottomAnchor, constant: 18),
+            fromCountryView.topAnchor.constraint(equalTo: fromLabel.bottomAnchor, constant: 9),
+            fromCountryView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            fromCountryView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            fromCountryView.heightAnchor.constraint(equalToConstant: 76),
+            toLabel.topAnchor.constraint(equalTo: fromCountryView.bottomAnchor, constant: 18),
             toLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             toCountryView.topAnchor.constraint(equalTo: toLabel.bottomAnchor, constant: 9),
             toCountryView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
@@ -111,7 +112,67 @@ class AddBidViewController: UIViewController {
             addButton.heightAnchor.constraint(equalToConstant: 40)
         ])
     }
+    
+    //MARK: - Custom NavBar setup
+    func setupBackNavBar(title: String, backAction: @escaping () -> Void) {
+        let navBar = NavigationBarView(title: title, isBackButtonVisible: true, backAction: backAction)
+        let hostingController = UIHostingController(rootView:navBar)
+        navigationItem.titleView = hostingController.view
+    }
+    
+    private func setupCustomNavBar() {
+        setupBackNavBar(title: "Add Bid") {
+            self.navigationController?.popViewController(animated: true)
+        }
+    }
+    
+    //MARK: - Gesture handling
+    private func addCountrySelectionTapGesture() {
+        let fromTap = UITapGestureRecognizer(target: self, action: #selector(fromCountryTapped))
+        fromCountryView.addGestureRecognizer(fromTap)
+        
+        let toTap = UITapGestureRecognizer(target: self, action: #selector(toCountryTapped))
+        fromCountryView.addGestureRecognizer(toTap)
+    }
 
+    @objc private func fromCountryTapped() {
+        viewModel.onSelected?()
+        viewModel.target = .from
+    }
  
+    @objc private func toCountryTapped() {
+        viewModel.onSelected?()
+        viewModel.target = .to
+    }
 
+    //MARK: - ViewModel binding
+    private func bindViewModels() {
+        if viewModel != nil {
+            viewModel.didSelectCountry = { [weak self] selectedCountryName, currencyCode in
+                guard let self = self else { return }
+                switch viewModel.target {
+                case .from:
+                    viewModel.fromCode = currencyCode.currencyCode
+                    fromCountryView.configure(county: selectedCountryName, currency: currencyCode.currencyName, code: currencyCode.currencyCode)
+                case .to:
+                    viewModel.fromCode = currencyCode.currencyCode
+                    toCountryView.configure(county: selectedCountryName, currency: currencyCode.currencyName, code: currencyCode.currencyCode)
+                }
+            }
+        } else {
+            print("select country in bindViewModel = nil")
+        }
+        addButton.addTarget(self, action: #selector(handleAddButton), for: .touchUpInside)
+    }
+    
+    @objc func handleAddButton() {
+        guard let amountStr = amountTextField.text,
+              let amount = Double(amountStr) else {
+            return
+        }
+        Task {
+            try? await self.viewModel.fetchBidData(fromCode: self.viewModel.fromCode, toCode: self.viewModel.toCode, amount: amount)
+        }
+        viewModel.backAction?()
+    }
 }
