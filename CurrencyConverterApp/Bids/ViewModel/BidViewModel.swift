@@ -45,16 +45,13 @@ final class BidViewModel: BidViewModelProtocol {
     }
     
     func fetchBidData(fromCode: String, toCode: String, amount: Double) async throws {
-        do {
-                let toAmount = try await getBidAmount(amount: amount)
-                let data = BidModel(fromCode: fromCode, toCode: toCode, fromAmount: amount, toAmount: toAmount)
-                realmService?.saveBid(model: data)
-                await loadData()
-                view?.updateTableView()
-            } catch {
-                print("Error in fetchBidData: \(error)")
-                throw error
-            }
+        Task {
+            let toAmount = try await getBidAmount(amount: amount)
+            let data = BidModel(fromCode: fromCode, toCode: toCode, fromAmount: amount, toAmount: toAmount)
+            realmService?.saveBid(model: data)
+            await loadData()
+            view?.updateTableView()
+        }
     }
     
     private func getBidAmount(amount: Double) async throws -> Double {
@@ -66,6 +63,7 @@ final class BidViewModel: BidViewModelProtocol {
              throw error
          }
      }
+   
     
 @MainActor
     func loadData() async {

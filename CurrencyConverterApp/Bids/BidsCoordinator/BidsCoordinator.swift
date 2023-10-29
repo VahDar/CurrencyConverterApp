@@ -31,6 +31,7 @@ class BidsCoordinator: Coordinator {
     
     private func goToBids() {
         let viewController = BidsViewController()
+        viewModel.view = viewController
         viewController.viewModel = viewModel
         navigationController.tabBarItem = UITabBarItem(title: nil, image: TabBarItem.bids.imageItems, tag: 2)
         navigationController.pushViewController(viewController, animated: true)

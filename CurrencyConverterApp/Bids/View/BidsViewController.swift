@@ -117,7 +117,8 @@ class BidsViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedModel = viewModel.data[indexPath.row]
-        viewModel.realmService?.saveBid(model: selectedModel)
+//        selectedModel.isOpen.toggle()
+//        tableView.reloadRows(at: indexPath.row, with: selectedModel)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

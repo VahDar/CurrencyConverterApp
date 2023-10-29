@@ -31,8 +31,6 @@ class BidsTableViewCell: UITableViewCell {
     
     private let caseButton: UIButton = {
        let button = UIButton()
-        button.backgroundColor = .caseOpen
-        button.tintColor = .tintOpen
         button.layer.cornerRadius = 10
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -96,18 +94,20 @@ class BidsTableViewCell: UITableViewCell {
         let range = (currencyCode as NSString).range(of: "/")
         attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.tabBarUnpressed, range: range)
         currencyNameLabel.attributedText = attributedString
-        setCaseStatus(for: model.isOpen)
+        switch model.isOpen {
+        case true: openStatus()
+        case false: closedStatus()
+        }
     }
     
-    private func setCaseStatus( for isOpen: Bool) {
-        if isOpen {
-            caseButton.backgroundColor = .caseOpen
-            caseButton.tintColor = .tintOpen
-            caseButton.setTitle("Open", for: .normal)
-        } else {
-            caseButton.backgroundColor = .caseClosed
-            caseButton.tintColor = .tabBarUnpressed
-            caseButton.setTitle("Closed", for: .normal)
-        }
+    private func openStatus() {
+        caseButton.backgroundColor = .caseOpen
+        caseButton.setTitleColor(UIColor.tintOpen, for: .normal)
+        caseButton.setTitle("Open", for: .normal)
+    }
+    private func closedStatus() {
+        caseButton.backgroundColor = .caseClosed
+        caseButton.setTitleColor(UIColor.tabBarUnpressed, for: .normal)
+        caseButton.setTitle("Closed", for: .normal)
     }
 }

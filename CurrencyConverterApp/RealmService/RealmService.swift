@@ -35,7 +35,8 @@ final class RealmService: RealmServiceProtocol {
     func saveBid(model: BidModel) {
         let realm = try! Realm()
         try! realm.write {
-        realm.add(model, update: .modified)
+            model.isOpen.toggle()
+            realm.add(model, update: .modified)
         }
     }
     

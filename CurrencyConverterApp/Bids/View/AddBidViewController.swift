@@ -172,12 +172,11 @@ class AddBidViewController: UIViewController {
     }
     
     @objc func handleAddButton() {
-        Task {
-            if let amountStr = self.amountTextField.text,
-               let amount = Double(amountStr)  {
+            guard let amountStr = self.amountTextField.text,
+                  let amount = Double(amountStr) else { return }
+                Task {
                 try? await self.viewModel.fetchBidData(fromCode: self.viewModel.fromCode, toCode: self.viewModel.toCode, amount: amount)
             }
-        }
         viewModel.backAction?()
     }
     
