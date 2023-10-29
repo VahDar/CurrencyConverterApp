@@ -30,7 +30,8 @@ class AddBidViewController: UIViewController {
         textField.leftView = leftView
         textField.leftViewMode = .always
         textField.placeholder = "Enter Bid Value"
-        textField.textColor = .tabBarUnpressed
+        textField.textColor = .tabBarPressed
+        textField.layer.borderColor = UIColor.tabBarUnpressed.cgColor
         textField.layer.borderWidth = 0.5
         textField.layer.cornerRadius = 5
         textField.translatesAutoresizingMaskIntoConstraints = false

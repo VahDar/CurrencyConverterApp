@@ -97,6 +97,6 @@ class SelectedCountry: UIView {
         isSelected = true
         self.countryFlagView.image = UIImage(named: code)
         self.countryLabel.text = county
-        self.currencyLabel.text = currency + " (\(code)"
+        self.currencyLabel.text = currency + " (\(code))"
     }
 }

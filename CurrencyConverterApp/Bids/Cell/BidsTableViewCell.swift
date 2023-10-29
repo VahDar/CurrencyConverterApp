@@ -50,11 +50,17 @@ class BidsTableViewCell: UITableViewCell {
         return label
     }()
     
+    private let arrowImage: UIImageView = {
+        let image = UIImageView()
+        image.translatesAutoresizingMaskIntoConstraints = false
+        return image
+    }()
+    
    // MARK: - Constreints
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        [fromCountryImage, toCountryImage, caseButton, currencyNameLabel, toAmountLabel, fromAmountLabel].forEach(contentView.addSubview)
+        [fromCountryImage, toCountryImage, caseButton, currencyNameLabel, toAmountLabel, fromAmountLabel, arrowImage].forEach(contentView.addSubview)
         
         NSLayoutConstraint.activate([
             fromCountryImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 18),
@@ -74,7 +80,11 @@ class BidsTableViewCell: UITableViewCell {
             fromAmountLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -18),
             fromAmountLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             toAmountLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
-            toAmountLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -18)
+            toAmountLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -18),
+            arrowImage.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            arrowImage.centerYAnchor.constraint(equalTo: fromAmountLabel.centerYAnchor),
+            arrowImage.heightAnchor.constraint(equalToConstant: 10),
+            arrowImage.widthAnchor.constraint(equalToConstant: 35)
         ])
     }
     
@@ -85,6 +95,7 @@ class BidsTableViewCell: UITableViewCell {
     //MARK: - Flow func
     
     func configure(_ model: BidModel) {
+        arrowImage.image = UIImage(named: "ArrowLong")
         fromCountryImage.image = UIImage(named: model.fromCode)
         toCountryImage.image = UIImage(named: model.toCode)
         fromAmountLabel.attributedText = (model.fromCode.getSymbolForCurrencyCode() + model.stringFromAmount).createHighlightedAttributedString()
