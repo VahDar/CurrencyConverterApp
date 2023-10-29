@@ -17,10 +17,11 @@ protocol BidViewModelProtocol: SelectViewModelProtocol {
     var toCode: String { get set }
     var data: [BidModel] { get set }
     var realmService: RealmServiceProtocol? { get set }
-    var networkingService: NetworkServiceProtocol! { get set }
+    var networkingService: NetworkingBidsProtocol! { get set }
     var didSelectCountry: ((String, CountryCurrenciesModel) -> Void)? { get set }
     func fetchBidData(fromCode: String, toCode: String, amount: Double) async throws
     func loadData() async
+    var view: BidsViewProtocol? { get set }
 }
 
 final class BidViewModel: BidViewModelProtocol {
@@ -34,26 +35,39 @@ final class BidViewModel: BidViewModelProtocol {
     var toCode: String = ""
     var data: [BidModel] = []
     var realmService: RealmServiceProtocol?
-    var networkingService: NetworkServiceProtocol!
+    var networkingService: NetworkingBidsProtocol!
     var target: Target = .from
+    var view: BidsViewProtocol?
+    
+    init(networkingService: NetworkingBidsProtocol, realmService: RealmServiceProtocol) {
+        self.networkingService = networkingService
+        self.realmService = realmService
+    }
     
     func fetchBidData(fromCode: String, toCode: String, amount: Double) async throws {
         do {
-            let toAmount = try await fetchBidAmount( amount: amount)
-            let data = BidModel(fromCode: fromCode, toCode: toCode, fromAmount: amount, toAmount: toAmount)
-            realmService?.saveBid(model: data)
-            Task {
+                let toAmount = try await getBidAmount(amount: amount)
+                let data = BidModel(fromCode: fromCode, toCode: toCode, fromAmount: amount, toAmount: toAmount)
+                realmService?.saveBid(model: data)
                 await loadData()
+                view?.updateTableView()
+            } catch {
+                print("Error in fetchBidData: \(error)")
+                throw error
             }
-        } catch {
-            print(error)
-        }
     }
     
-    private func fetchBidAmount( amount: Double) async throws -> Double {
-        try await networkingService.getBid(from: fromCode, to: toCode, amount: amount)
-    }
+    private func getBidAmount(amount: Double) async throws -> Double {
+        do {
+             let bidAmount = try await networkingService.getBid(from: fromCode, to: toCode, amount: amount)
+             return bidAmount
+         } catch {
+             print("Error in getBidAmount: \(error)")
+             throw error
+         }
+     }
     
+@MainActor
     func loadData() async {
         do {
             data = try await realmService?.loadBid() ?? []
@@ -66,3 +80,4 @@ final class BidViewModel: BidViewModelProtocol {
 enum Target {
     case from, to
 }
+

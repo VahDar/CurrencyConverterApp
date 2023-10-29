@@ -48,12 +48,19 @@ class BidsCoordinator: Coordinator {
         navigationController.pushViewController(viewController, animated: true)
     }
     
+    private func backToPreviousScreen() {
+        navigationController.popViewController(animated: true)
+    }
+    
     private func goToSubScreen() {
         viewModel.addBidAction = { [weak self] in
             self?.goToAddScreen()
         }
         viewModel.onSelected = { [weak self] in
             self?.goToSelectScreen()
+        }
+        viewModel.backAction = { [weak self] in
+            self?.backToPreviousScreen()
         }
     }
     

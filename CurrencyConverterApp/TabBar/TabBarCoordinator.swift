@@ -45,7 +45,9 @@ class TabBarCoordinator: Coordinator {
     }
     
     private func bidsScreen() {
-        let viewModel = BidViewModel()
+        let realmService = RealmService()
+        let networkService = NetworkingService()
+        let viewModel = BidViewModel(networkingService: networkService, realmService: realmService)
         let coordinator = BidsCoordinator(UINavigationController(), viewModel: viewModel)
         tabBarController.viewControllers?.append(coordinator.navigationController)
         addChildCoordinator(coordinator)

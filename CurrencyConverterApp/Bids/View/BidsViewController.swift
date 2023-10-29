@@ -9,7 +9,11 @@ import UIKit
 import SwiftUI
 import Combine
 
-class BidsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+protocol BidsViewProtocol: AnyObject {
+    func updateTableView()
+}
+
+class BidsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, BidsViewProtocol {
 
     //MARK: - Properties
     var viewModel: BidViewModelProtocol!
@@ -33,6 +37,12 @@ class BidsViewController: UIViewController, UITableViewDelegate, UITableViewData
         useSetupNavBar()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+            super.viewWillAppear(animated)
+            constraints()
+            fetchData()
+        }
+    
     private func fetchData() {
         Task {
            await viewModel.loadData()
@@ -40,8 +50,25 @@ class BidsViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
-    //MARK: - Setup UI
+    func updateTableView() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
     
+    // MARK: - Constraints
+    private func constraints() {
+        [tableView].forEach(view.addSubview)
+        
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+        ])
+    }
+    
+    //MARK: - Setup UI
     private func setupUI() {
         navigationController?.navigationItem.hidesBackButton = true
         view.backgroundColor = .white
@@ -75,24 +102,25 @@ class BidsViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     //MARK: - Setup TableView
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if viewModel.searchText.isEmpty {
-            return viewModel.data.count
-        } else {
-            return viewModel.data.filter { ($0.fromCode + $0.toCode).lowercased().contains(viewModel.searchText.lowercased()) }.count
-        }
+        return viewModel.data.count
     }
    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = BidsTableViewCell(style: .default, reuseIdentifier: String(describing: BidsTableViewCell.self))
-        let filtredBids = viewModel.data.filter { ($0.fromCode + $0.toCode).lowercased().contains(viewModel.searchText.lowercased())}
-        let item = filtredBids[indexPath.row]
-        cell.configure(item)
-        return cell
+            let cell = BidsTableViewCell(style: .default, reuseIdentifier: String(describing: BidsTableViewCell.self))
+            let bidModel = viewModel.data[indexPath.row]
+            cell.configure(bidModel)
+            if indexPath.row > 0 {
+                cell.addSeparator()
+            }
+            return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let filteredBids = viewModel.data.filter { ($0.fromCode + $0.toCode).lowercased().contains(viewModel.searchText.lowercased()) }
-        let model = filteredBids[indexPath.row]
-        viewModel.realmService?.saveBid(model: model)
+        let selectedModel = viewModel.data[indexPath.row]
+        viewModel.realmService?.saveBid(model: selectedModel)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 138.0
     }
 }

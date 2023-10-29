@@ -138,7 +138,7 @@ class AddBidViewController: UIViewController {
         fromCountryView.addGestureRecognizer(fromTap)
         
         let toTap = UITapGestureRecognizer(target: self, action: #selector(toCountryTapped))
-        fromCountryView.addGestureRecognizer(toTap)
+        toCountryView.addGestureRecognizer(toTap)
     }
 
     @objc private func fromCountryTapped() {
@@ -161,7 +161,7 @@ class AddBidViewController: UIViewController {
                     viewModel.fromCode = currencyCode.currencyCode
                     fromCountryView.configure(county: selectedCountryName, currency: currencyCode.currencyName, code: currencyCode.currencyCode)
                 case .to:
-                    viewModel.fromCode = currencyCode.currencyCode
+                    viewModel.toCode = currencyCode.currencyCode
                     toCountryView.configure(county: selectedCountryName, currency: currencyCode.currencyName, code: currencyCode.currencyCode)
                 }
             }
@@ -172,12 +172,11 @@ class AddBidViewController: UIViewController {
     }
     
     @objc func handleAddButton() {
-        guard let amountStr = amountTextField.text,
-              let amount = Double(amountStr) else {
-            return
-        }
         Task {
-            try? await self.viewModel.fetchBidData(fromCode: self.viewModel.fromCode, toCode: self.viewModel.toCode, amount: amount)
+            if let amountStr = self.amountTextField.text,
+               let amount = Double(amountStr)  {
+                try? await self.viewModel.fetchBidData(fromCode: self.viewModel.fromCode, toCode: self.viewModel.toCode, amount: amount)
+            }
         }
         viewModel.backAction?()
     }
