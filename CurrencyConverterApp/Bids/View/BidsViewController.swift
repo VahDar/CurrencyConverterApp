@@ -44,10 +44,8 @@ class BidsViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     
     private func fetchData() {
-        Task {
-           await viewModel.loadData()
-            tableView.reloadData()
-        }
+        viewModel.loadData()
+        tableView.reloadData()
     }
     
     func updateTableView() {
@@ -116,9 +114,9 @@ class BidsViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedModel = viewModel.data[indexPath.row]
-//        selectedModel.isOpen.toggle()
-//        tableView.reloadRows(at: indexPath.row, with: selectedModel)
+            let selected = viewModel.data[indexPath.row]
+            viewModel.save(model: selected)
+            tableView.reloadRows(at: [indexPath], with: .automatic)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

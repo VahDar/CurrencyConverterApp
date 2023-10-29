@@ -20,8 +20,9 @@ protocol BidViewModelProtocol: SelectViewModelProtocol {
     var networkingService: NetworkingBidsProtocol! { get set }
     var didSelectCountry: ((String, CountryCurrenciesModel) -> Void)? { get set }
     func fetchBidData(fromCode: String, toCode: String, amount: Double) async throws
-    func loadData() async
+    func loadData()
     var view: BidsViewProtocol? { get set }
+    func save(model: BidModel)
 }
 
 final class BidViewModel: BidViewModelProtocol {
@@ -45,12 +46,13 @@ final class BidViewModel: BidViewModelProtocol {
     }
     
     func fetchBidData(fromCode: String, toCode: String, amount: Double) async throws {
-        Task {
+        do {
             let toAmount = try await getBidAmount(amount: amount)
             let data = BidModel(fromCode: fromCode, toCode: toCode, fromAmount: amount, toAmount: toAmount)
-            realmService?.saveBid(model: data)
-            await loadData()
+            save(model: data)
             view?.updateTableView()
+        } catch {
+            print(error.localizedDescription)
         }
     }
     
@@ -63,14 +65,18 @@ final class BidViewModel: BidViewModelProtocol {
              throw error
          }
      }
-   
     
-@MainActor
-    func loadData() async {
-        do {
-            data = try await realmService?.loadBid() ?? []
-        } catch {
-            print("Load data error \(error)")
+
+    func save(model: BidModel) {
+        realmService?.saveBid(model: model)
+        loadData()
+    }
+    
+
+    func loadData()  {
+        realmService?.loadBid { loaded in
+            self.data = loaded
+            self.view?.updateTableView()
         }
     }
 }

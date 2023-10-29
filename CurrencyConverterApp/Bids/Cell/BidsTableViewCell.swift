@@ -95,8 +95,10 @@ class BidsTableViewCell: UITableViewCell {
         attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.tabBarUnpressed, range: range)
         currencyNameLabel.attributedText = attributedString
         switch model.isOpen {
-        case true: openStatus()
-        case false: closedStatus()
+        case true: 
+            openStatus()
+        case false: 
+            closedStatus()
         }
     }
     
