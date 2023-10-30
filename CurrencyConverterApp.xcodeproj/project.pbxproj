@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FC17E3762AF0087600DB0472 /* SettingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC17E3752AF0087600DB0472 /* SettingCoordinator.swift */; };
+		FC17E37A2AF00A7F00DB0472 /* SettingScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC17E3792AF00A7F00DB0472 /* SettingScreenViewModel.swift */; };
 		FC1F0F9D2AEE624500AB5EDE /* CellSeparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1F0F9C2AEE624500AB5EDE /* CellSeparator.swift */; };
 		FC29E7D02AE7BAE700A9E3B5 /* AddCurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC29E7CF2AE7BAE700A9E3B5 /* AddCurrencyViewController.swift */; };
 		FC29E7D22AE7BDDB00A9E3B5 /* SelectCountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC29E7D12AE7BDDB00A9E3B5 /* SelectCountryTableViewCell.swift */; };
@@ -63,6 +64,7 @@
 
 /* Begin PBXFileReference section */
 		FC17E3752AF0087600DB0472 /* SettingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCoordinator.swift; sourceTree = "<group>"; };
+		FC17E3792AF00A7F00DB0472 /* SettingScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingScreenViewModel.swift; sourceTree = "<group>"; };
 		FC1F0F9C2AEE624500AB5EDE /* CellSeparator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellSeparator.swift; sourceTree = "<group>"; };
 		FC29E7CF2AE7BAE700A9E3B5 /* AddCurrencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCurrencyViewController.swift; sourceTree = "<group>"; };
 		FC29E7D12AE7BDDB00A9E3B5 /* SelectCountryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCountryTableViewCell.swift; sourceTree = "<group>"; };
@@ -132,6 +134,8 @@
 		FC17E3732AF0084E00DB0472 /* SettingScreen */ = {
 			isa = PBXGroup;
 			children = (
+				FC17E3782AF00A6800DB0472 /* ViewModel */,
+				FC17E3772AF0093300DB0472 /* View */,
 				FC17E3742AF0086600DB0472 /* SettingCoordinator */,
 			);
 			path = SettingScreen;
@@ -143,6 +147,21 @@
 				FC17E3752AF0087600DB0472 /* SettingCoordinator.swift */,
 			);
 			path = SettingCoordinator;
+			sourceTree = "<group>";
+		};
+		FC17E3772AF0093300DB0472 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FC17E3782AF00A6800DB0472 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FC17E3792AF00A7F00DB0472 /* SettingScreenViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		FC349D4C2AE96DF5007141FD /* Bids */ = {
@@ -514,6 +533,7 @@
 				FC349D512AE97349007141FD /* BidModel.swift in Sources */,
 				FCF5BB552AE16B3900BA6F6B /* TabBarController.swift in Sources */,
 				FCC942AC2AE41038005CF7F1 /* SetupNavBar.swift in Sources */,
+				FC17E37A2AF00A7F00DB0472 /* SettingScreenViewModel.swift in Sources */,
 				FC6D588E2AE6E506003B6896 /* SelectedCountry.swift in Sources */,
 				FCD9F3682AE2B47300B2C790 /* CurrencyView.swift in Sources */,
 				FCD9F3612AE2B00600B2C790 /* Bundle-Decodable.swift in Sources */,
