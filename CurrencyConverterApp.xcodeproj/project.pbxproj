@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC17E3762AF0087600DB0472 /* SettingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC17E3752AF0087600DB0472 /* SettingCoordinator.swift */; };
 		FC1F0F9D2AEE624500AB5EDE /* CellSeparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1F0F9C2AEE624500AB5EDE /* CellSeparator.swift */; };
 		FC29E7D02AE7BAE700A9E3B5 /* AddCurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC29E7CF2AE7BAE700A9E3B5 /* AddCurrencyViewController.swift */; };
 		FC29E7D22AE7BDDB00A9E3B5 /* SelectCountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC29E7D12AE7BDDB00A9E3B5 /* SelectCountryTableViewCell.swift */; };
@@ -61,6 +62,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FC17E3752AF0087600DB0472 /* SettingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCoordinator.swift; sourceTree = "<group>"; };
 		FC1F0F9C2AEE624500AB5EDE /* CellSeparator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellSeparator.swift; sourceTree = "<group>"; };
 		FC29E7CF2AE7BAE700A9E3B5 /* AddCurrencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCurrencyViewController.swift; sourceTree = "<group>"; };
 		FC29E7D12AE7BDDB00A9E3B5 /* SelectCountryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCountryTableViewCell.swift; sourceTree = "<group>"; };
@@ -127,6 +129,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FC17E3732AF0084E00DB0472 /* SettingScreen */ = {
+			isa = PBXGroup;
+			children = (
+				FC17E3742AF0086600DB0472 /* SettingCoordinator */,
+			);
+			path = SettingScreen;
+			sourceTree = "<group>";
+		};
+		FC17E3742AF0086600DB0472 /* SettingCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				FC17E3752AF0087600DB0472 /* SettingCoordinator.swift */,
+			);
+			path = SettingCoordinator;
+			sourceTree = "<group>";
+		};
 		FC349D4C2AE96DF5007141FD /* Bids */ = {
 			isa = PBXGroup;
 			children = (
@@ -343,6 +361,7 @@
 		FCF5BB352AE1653800BA6F6B /* CurrencyConverterApp */ = {
 			isa = PBXGroup;
 			children = (
+				FC17E3732AF0084E00DB0472 /* SettingScreen */,
 				FC349D4C2AE96DF5007141FD /* Bids */,
 				FCC942B62AE43390005CF7F1 /* Wallet */,
 				FCD9F3622AE2B0D000B2C790 /* CurrencyList */,
@@ -514,6 +533,7 @@
 				FCD9F37F2AE2FECF00B2C790 /* CountryCurrenciesManager.swift in Sources */,
 				FCF5BB4E2AE1668E00BA6F6B /* Coordinator.swift in Sources */,
 				FCD9F36A2AE2B4A900B2C790 /* CurrencyViewCell.swift in Sources */,
+				FC17E3762AF0087600DB0472 /* SettingCoordinator.swift in Sources */,
 				FC6D58932AE6E6E2003B6896 /* CurrencyUtility.swift in Sources */,
 				FC724AA22AEAB26D0061FD9D /* BidsViewController.swift in Sources */,
 				FC6D58952AE6E733003B6896 /* StringFormatter.swift in Sources */,
