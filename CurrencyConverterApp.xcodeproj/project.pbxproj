@@ -51,6 +51,7 @@
 		FCD9F37F2AE2FECF00B2C790 /* CountryCurrenciesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9F37E2AE2FECF00B2C790 /* CountryCurrenciesManager.swift */; };
 		FCD9F3812AE3000C00B2C790 /* CountryCurrencies.json in Resources */ = {isa = PBXBuildFile; fileRef = FCD9F3802AE3000C00B2C790 /* CountryCurrencies.json */; };
 		FCEA684C2AE5436400DB1240 /* WalletViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA684B2AE5436400DB1240 /* WalletViewModel.swift */; };
+		FCEF99C82AF1855900050419 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEF99C72AF1855900050419 /* SettingViewController.swift */; };
 		FCF5A6152AED07EB003297AE /* AddBidViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF5A6142AED07EA003297AE /* AddBidViewController.swift */; };
 		FCF5BB372AE1653800BA6F6B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF5BB362AE1653800BA6F6B /* AppDelegate.swift */; };
 		FCF5BB392AE1653800BA6F6B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF5BB382AE1653800BA6F6B /* SceneDelegate.swift */; };
@@ -106,6 +107,7 @@
 		FCD9F37E2AE2FECF00B2C790 /* CountryCurrenciesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCurrenciesManager.swift; sourceTree = "<group>"; };
 		FCD9F3802AE3000C00B2C790 /* CountryCurrencies.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CountryCurrencies.json; sourceTree = "<group>"; };
 		FCEA684B2AE5436400DB1240 /* WalletViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewModel.swift; sourceTree = "<group>"; };
+		FCEF99C72AF1855900050419 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		FCF5A6142AED07EA003297AE /* AddBidViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBidViewController.swift; sourceTree = "<group>"; };
 		FCF5BB332AE1653800BA6F6B /* CurrencyConverterApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrencyConverterApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCF5BB362AE1653800BA6F6B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -144,9 +146,9 @@
 		FC17E3732AF0084E00DB0472 /* SettingScreen */ = {
 			isa = PBXGroup;
 			children = (
-				FC14CA872AF1452E0099DDF0 /* Cell */,
 				FC17E3742AF0086600DB0472 /* SettingCoordinator */,
 				FC17E3772AF0093300DB0472 /* View */,
+				FC14CA872AF1452E0099DDF0 /* Cell */,
 				FC17E3782AF00A6800DB0472 /* ViewModel */,
 			);
 			path = SettingScreen;
@@ -163,6 +165,7 @@
 		FC17E3772AF0093300DB0472 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FCEF99C72AF1855900050419 /* SettingViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -572,6 +575,7 @@
 				FC349D4F2AE96E2E007141FD /* BidsCoordinator.swift in Sources */,
 				FCD9F3772AE2FD5200B2C790 /* Endpoint.swift in Sources */,
 				FCC942B02AE411A8005CF7F1 /* WalletModel.swift in Sources */,
+				FCEF99C82AF1855900050419 /* SettingViewController.swift in Sources */,
 				FCD9F3702AE2EEFF00B2C790 /* CurrencyListViewModel.swift in Sources */,
 				FCC942B92AE433B8005CF7F1 /* WalletCoordinator.swift in Sources */,
 				FC29E7D42AE7CAF300A9E3B5 /* SelectCountryViewController.swift in Sources */,
