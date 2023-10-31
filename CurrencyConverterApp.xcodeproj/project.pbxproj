@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC14CA892AF145550099DDF0 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC14CA882AF145550099DDF0 /* SettingTableViewCell.swift */; };
 		FC17E3762AF0087600DB0472 /* SettingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC17E3752AF0087600DB0472 /* SettingCoordinator.swift */; };
 		FC17E37A2AF00A7F00DB0472 /* SettingScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC17E3792AF00A7F00DB0472 /* SettingScreenViewModel.swift */; };
 		FC1F0F9D2AEE624500AB5EDE /* CellSeparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1F0F9C2AEE624500AB5EDE /* CellSeparator.swift */; };
@@ -63,6 +64,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FC14CA882AF145550099DDF0 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		FC17E3752AF0087600DB0472 /* SettingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCoordinator.swift; sourceTree = "<group>"; };
 		FC17E3792AF00A7F00DB0472 /* SettingScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingScreenViewModel.swift; sourceTree = "<group>"; };
 		FC1F0F9C2AEE624500AB5EDE /* CellSeparator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellSeparator.swift; sourceTree = "<group>"; };
@@ -131,12 +133,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FC14CA872AF1452E0099DDF0 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FC14CA882AF145550099DDF0 /* SettingTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		FC17E3732AF0084E00DB0472 /* SettingScreen */ = {
 			isa = PBXGroup;
 			children = (
-				FC17E3782AF00A6800DB0472 /* ViewModel */,
-				FC17E3772AF0093300DB0472 /* View */,
+				FC14CA872AF1452E0099DDF0 /* Cell */,
 				FC17E3742AF0086600DB0472 /* SettingCoordinator */,
+				FC17E3772AF0093300DB0472 /* View */,
+				FC17E3782AF00A6800DB0472 /* ViewModel */,
 			);
 			path = SettingScreen;
 			sourceTree = "<group>";
@@ -541,6 +552,7 @@
 				FCEA684C2AE5436400DB1240 /* WalletViewModel.swift in Sources */,
 				FC349D552AE978E5007141FD /* BidsTableViewCell.swift in Sources */,
 				FC29E7D02AE7BAE700A9E3B5 /* AddCurrencyViewController.swift in Sources */,
+				FC14CA892AF145550099DDF0 /* SettingTableViewCell.swift in Sources */,
 				FCF5A6152AED07EB003297AE /* AddBidViewController.swift in Sources */,
 				FCD9F3732AE2FCD800B2C790 /* NetworkError.swift in Sources */,
 				FCD9F3752AE2FCF700B2C790 /* NetworkService.swift in Sources */,
