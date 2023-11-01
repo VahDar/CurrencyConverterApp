@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class SettingViewController: UIViewController {
 
@@ -22,6 +23,13 @@ class SettingViewController: UIViewController {
         label.font = UIFont(name: "Inter-Medium", size: 14)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
+    }()
+    
+    private let lineContentView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor.tabBarUnpressed
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
     }()
     
     private let selectedCode: UILabel = {
@@ -49,6 +57,7 @@ class SettingViewController: UIViewController {
         super.viewDidLoad()
         countryManager = CountryCurrenciesManager()
         setupUI()
+        setUpCustomNavBar()
         constreints()
         tapGesture()
         updateFuncUI()
@@ -57,7 +66,7 @@ class SettingViewController: UIViewController {
     //MARK: - Constreints
     private func constreints() {
         view.addSubview(contentView)
-        [selectedCode, imageCountry, selectCurrencyLabel].forEach(contentView.addSubview)
+        [selectedCode, imageCountry, selectCurrencyLabel, lineContentView].forEach(contentView.addSubview)
         
         NSLayoutConstraint.activate([
             contentView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
@@ -71,7 +80,11 @@ class SettingViewController: UIViewController {
             imageCountry.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
             imageCountry.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
             imageCountry.heightAnchor.constraint(equalToConstant: 44),
-            imageCountry.widthAnchor.constraint(equalToConstant: 44)
+            imageCountry.widthAnchor.constraint(equalToConstant: 44),
+            lineContentView.heightAnchor.constraint(equalToConstant: 0.5),
+            lineContentView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            lineContentView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            lineContentView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
     }
 
@@ -84,7 +97,6 @@ class SettingViewController: UIViewController {
         let settingTableVC = SettingTableViewController()
         settingTableVC.viewModel = SettingScreenViewModel(countryManager: CountryCurrenciesManager(), userDefaults: UserDefaults.standard)
         settingTableVC.didSelectCell = { selectedCurrency in
-            // Use the selected cell data here
             self.updateUI(with: selectedCurrency)
         }
         self.navigationController?.pushViewController(settingTableVC, animated: true)
@@ -93,7 +105,20 @@ class SettingViewController: UIViewController {
     //MARK: - SetupUI
     func setupUI() {
         view.backgroundColor = .white
-        self.title = "Settings"
+    }
+    
+    func setupBackNavBar(title: String, backAction: @escaping () -> Void) {
+        navigationItem.hidesBackButton = true
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        let navBar = NavigationBarView(title: title, isBackButtonVisible: false, backAction: backAction)
+        let hostingController = UIHostingController(rootView: navBar)
+        navigationItem.titleView = hostingController.view
+    }
+    
+    private func setUpCustomNavBar() {
+        setupBackNavBar(title: "Settings") {
+        }
     }
     
     func updateFuncUI() {
