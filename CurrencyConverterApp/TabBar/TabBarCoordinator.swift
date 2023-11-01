@@ -60,6 +60,7 @@ class TabBarCoordinator: Coordinator {
         let userDefaults = UserDefaults()
         let viewModel = SettingScreenViewModel(countryManager: countryManager, userDefaults: userDefaults)
         let coordinator = SettingCoordinator(UINavigationController(), viewModel: viewModel)
+        tabBarController.viewControllers?.append(coordinator.navigationController)
         addChildCoordinator(coordinator)
         coordinator.start()
     }

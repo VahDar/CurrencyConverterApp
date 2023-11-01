@@ -14,6 +14,8 @@ protocol SettingScreenViewModelProtocol {
     func saveSelected(currency: String)
     func loadSelectedCurrency()
     func isSelected(_ code: String) -> Bool
+    func updateSelectedCurrency(with currency: CountryCurrenciesModel)
+    func saveSelectedCurrencyName(_ currencyName: String)
 }
 
 class SettingScreenViewModel: SettingScreenViewModelProtocol {
@@ -25,9 +27,18 @@ class SettingScreenViewModel: SettingScreenViewModelProtocol {
            self.userDefaults = userDefaults
     }
        
+    func updateSelectedCurrency(with currency: CountryCurrenciesModel) {
+            saveSelected(currency: currency.currencyCode)
+            saveSelectedCurrencyName(currency.currencyName)
+        }
+    
     var selectedCurrency: String {
-        get { userDefaults.string(forKey: "selectedCurrency") ?? "UAH" }
-        set { userDefaults.set(newValue, forKey: "selectedCurrency") }
+        get {
+            return userDefaults.string(forKey: "selectedCurrency") ?? "UAH"
+        }
+        set {
+            userDefaults.set(newValue, forKey: "selectedCurrency")
+        }
     }
        
     var listData: [CountryCurrenciesModel] {
@@ -37,7 +48,11 @@ class SettingScreenViewModel: SettingScreenViewModelProtocol {
     func saveSelected(currency: String) {
         selectedCurrency = currency
     }
-       
+    
+    func saveSelectedCurrencyName(_ currencyName: String) {
+        userDefaults.set(currencyName, forKey: "selectedCurrencyName")
+    }
+    
     func loadSelectedCurrency() {
         selectedCurrency = UserDefaults.standard.string(forKey: "selectedCurrency") ?? "UAH"
     }

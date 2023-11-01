@@ -20,7 +20,7 @@ class SettingCoordinator: Coordinator {
     }
     
     func start() {
-        
+        goToSettingScreen()
         addChildCoordinator(self)
     }
     

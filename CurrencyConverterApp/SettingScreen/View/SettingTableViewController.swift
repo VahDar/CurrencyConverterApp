@@ -14,6 +14,7 @@ class SettingTableViewController: UIViewController, UITableViewDelegate, UITable
 
     //MARK: - Properties
     var viewModel: SettingScreenViewModelProtocol!
+    var didSelectCell: ((CountryCurrenciesModel) -> Void)?
     
     //MARK: - Views
     private let tableView: UITableView = {
@@ -82,7 +83,8 @@ class SettingTableViewController: UIViewController, UITableViewDelegate, UITable
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedCurrency = viewModel.listData[indexPath.row]
-        viewModel.saveSelected(currency: selectedCurrency.currencyCode)
+        didSelectCell?(selectedCurrency)
+        viewModel.updateSelectedCurrency(with: selectedCurrency)
         navigationController?.popViewController(animated: true)
     }
 }

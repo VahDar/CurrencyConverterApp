@@ -11,7 +11,7 @@ class SettingViewController: UIViewController {
 
     //MARK: - Properties
     var viewModel: SettingScreenViewModelProtocol!
-    private var countryManager: CountryCurrenciesModel!
+    private var countryManager: CountryCurrenciesManagerProtocol!
     private var savedCode = "UAH"
     
     
@@ -47,8 +47,10 @@ class SettingViewController: UIViewController {
     //MARK: - Lifecycle funcs
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        constreints()
+        tapGesture()
+        updateFuncUI()
+        view.backgroundColor = .white
     }
     
     //MARK: - Constreints
@@ -60,7 +62,7 @@ class SettingViewController: UIViewController {
             contentView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             contentView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             contentView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            contentView.heightAnchor.constraint(equalToConstant: 135),
+            contentView.heightAnchor.constraint(equalToConstant: 90),
             selectCurrencyLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 18),
             selectCurrencyLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
             selectedCode.topAnchor.constraint(equalTo: selectCurrencyLabel.bottomAnchor, constant: 15),
@@ -79,11 +81,30 @@ class SettingViewController: UIViewController {
     
     @objc func contentViewTapped() {
         let settingTableVC = SettingTableViewController()
+        settingTableVC.viewModel = SettingScreenViewModel(countryManager: CountryCurrenciesManager(), userDefaults: UserDefaults.standard)
+        settingTableVC.didSelectCell = { selectedCurrency in
+            // Use the selected cell data here
+            self.updateUI(with: selectedCurrency)
+        }
         self.navigationController?.pushViewController(settingTableVC, animated: true)
     }
     
     //MARK: - SetupUI
     
+    func updateFuncUI() {
+        if !viewModel.selectedCurrency.isEmpty {
+            let savedCurrency = viewModel.selectedCurrency
+            let savedCurrencyName = countryManager.findCountry(by: savedCurrency) ?? "UAH"
+            let countryCurrenciesModel = CountryCurrenciesModel(currencyCode: savedCurrency, currencyName: savedCurrencyName)
+            updateUI(with: countryCurrenciesModel)
+        }
+    }
+    
+    func updateUI(with currency: CountryCurrenciesModel) {
+            selectedCode.text = currency.currencyName
+            imageCountry.image = UIImage(named: currency.currencyCode)
+        }
 
+    
     
 }
