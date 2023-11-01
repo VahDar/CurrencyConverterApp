@@ -21,6 +21,7 @@ class TabBarCoordinator: Coordinator {
         currencyList()
         walletScreen()
         bidsScreen() 
+        settingScreen()
     }
     
     func finish() {
@@ -50,6 +51,15 @@ class TabBarCoordinator: Coordinator {
         let viewModel = BidViewModel(networkingService: networkService, realmService: realmService)
         let coordinator = BidsCoordinator(UINavigationController(), viewModel: viewModel)
         tabBarController.viewControllers?.append(coordinator.navigationController)
+        addChildCoordinator(coordinator)
+        coordinator.start()
+    }
+    
+    private func settingScreen() {
+        let countryManager = CountryCurrenciesManager()
+        let userDefaults = UserDefaults()
+        let viewModel = SettingScreenViewModel(countryManager: countryManager, userDefaults: userDefaults)
+        let coordinator = SettingCoordinator(UINavigationController(), viewModel: viewModel)
         addChildCoordinator(coordinator)
         coordinator.start()
     }
