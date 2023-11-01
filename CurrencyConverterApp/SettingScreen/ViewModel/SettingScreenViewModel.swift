@@ -8,29 +8,41 @@
 import Foundation
 
 protocol SettingScreenViewModelProtocol {
-    var onSelectedCurrency: (() -> Void)? { get set }
-    var listData: [CountryCurrenciesModel] { get }
-    var savedCode: String { get set }
+    var selectedCurrency: String { get }
+    var listData: [CountryCurrenciesModel]  { get }
+        
     func saveSelected(currency: String)
     func loadSelectedCurrency()
     func isSelected(_ code: String) -> Bool
 }
 
 class SettingScreenViewModel: SettingScreenViewModelProtocol {
-    var onSelectedCurrency: (() -> Void)?
-    var savedCode = UserDefaults.standard.string(forKey: "selectedCurrency") ?? "UAH"
-    var listData: [CountryCurrenciesModel] = []
-    
+    private var countryManager: CountryCurrenciesManager
+    private var userDefaults: UserDefaults
+       
+    init(countryManager: CountryCurrenciesManager, userDefaults: UserDefaults) {
+           self.countryManager = countryManager
+           self.userDefaults = userDefaults
+    }
+       
+    var selectedCurrency: String {
+        get { userDefaults.string(forKey: "selectedCurrency") ?? "UAH" }
+        set { userDefaults.set(newValue, forKey: "selectedCurrency") }
+    }
+       
+    var listData: [CountryCurrenciesModel] {
+        return Array(countryManager.currencyData.values)
+    }
+       
     func saveSelected(currency: String) {
-        UserDefaults.standard.set(currency, forKey: "selectedCurrency")
+        selectedCurrency = currency
     }
-    
+       
     func loadSelectedCurrency() {
-        savedCode = UserDefaults.standard.string(forKey: "selectedCurrency") ?? "UAH"
+        selectedCurrency = UserDefaults.standard.string(forKey: "selectedCurrency") ?? "UAH"
     }
-    
+       
     func isSelected(_ code: String) -> Bool {
-        savedCode == code
+        return selectedCurrency == code
     }
-    
 }

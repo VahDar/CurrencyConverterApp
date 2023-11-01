@@ -9,6 +9,8 @@ import UIKit
 
 class SettingTableViewCell: UITableViewCell {
 
+    var isCellSelected = false
+    
    //MARK: - Views
     private let countyImageView: UIImageView = {
        let image = UIImageView()
@@ -67,6 +69,6 @@ class SettingTableViewCell: UITableViewCell {
         countyImageView.image = UIImage(named: data.currencyCode)
         countryCodeLabel.text = data.currencyCode
         currencyNameLabel.text = data.currencyName
-        isSelectedImage.image = UIImage(named: "radio-checked")
+        isSelectedImage.image = UIImage(named: isCellSelected ? "radio-checked" : "radio-unchecked")
     }
 }
