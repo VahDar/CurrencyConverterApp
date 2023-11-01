@@ -18,7 +18,7 @@ class SettingViewController: UIViewController {
     //MARK: - Views
     private let selectCurrencyLabel: UILabel = {
        let label = UILabel()
-        label.text = "Selected Currency"
+        label.text = "Selected Currency:"
         label.font = UIFont(name: "Inter-Medium", size: 14)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -47,10 +47,11 @@ class SettingViewController: UIViewController {
     //MARK: - Lifecycle funcs
     override func viewDidLoad() {
         super.viewDidLoad()
+        countryManager = CountryCurrenciesManager()
+        setupUI()
         constreints()
         tapGesture()
         updateFuncUI()
-        view.backgroundColor = .white
     }
     
     //MARK: - Constreints
@@ -62,7 +63,7 @@ class SettingViewController: UIViewController {
             contentView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             contentView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             contentView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            contentView.heightAnchor.constraint(equalToConstant: 90),
+            contentView.heightAnchor.constraint(equalToConstant: 80),
             selectCurrencyLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 18),
             selectCurrencyLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
             selectedCode.topAnchor.constraint(equalTo: selectCurrencyLabel.bottomAnchor, constant: 15),
@@ -90,6 +91,10 @@ class SettingViewController: UIViewController {
     }
     
     //MARK: - SetupUI
+    func setupUI() {
+        view.backgroundColor = .white
+        self.title = "Settings"
+    }
     
     func updateFuncUI() {
         if !viewModel.selectedCurrency.isEmpty {

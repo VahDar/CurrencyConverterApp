@@ -77,6 +77,8 @@ class SettingTableViewController: UIViewController, UITableViewDelegate, UITable
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = SettingTableViewCell(style: .default, reuseIdentifier: String(describing: SettingTableViewCell.self))
         let currency = viewModel.listData[indexPath.row]
+        let isSelected = viewModel.isSelected(currency.currencyCode)
+        cell.isCellSelected = isSelected
         cell.configure(with: currency)
         return cell
     }
@@ -85,6 +87,7 @@ class SettingTableViewController: UIViewController, UITableViewDelegate, UITable
         let selectedCurrency = viewModel.listData[indexPath.row]
         didSelectCell?(selectedCurrency)
         viewModel.updateSelectedCurrency(with: selectedCurrency)
+        tableView.reloadData()
         navigationController?.popViewController(animated: true)
     }
 }
