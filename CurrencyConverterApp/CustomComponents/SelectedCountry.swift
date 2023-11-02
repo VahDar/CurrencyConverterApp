@@ -54,6 +54,14 @@ class SelectedCountry: UIView {
         return view
     }()
     
+    private let chevronImage: UIImageView = {
+    let image = UIImageView()
+        image.image = UIImage(systemName: "chevron.right")
+        image.tintColor = .tabBarUnpressed
+        image.translatesAutoresizingMaskIntoConstraints = false
+        return image
+    }()
+    
     // MARK: - Setup UI and constreints
     override init(frame: CGRect) {
            super.init(frame: frame)
@@ -75,7 +83,7 @@ class SelectedCountry: UIView {
         contentView.addSubview(labelStackView)
         contentView.addSubview(countryFlagView)
         contentView.addSubview(countryView)
-        
+        contentView.addSubview(chevronImage)
         
         NSLayoutConstraint.activate([
             contentView.leadingAnchor.constraint(equalTo: leadingAnchor),
@@ -87,7 +95,8 @@ class SelectedCountry: UIView {
             countryFlagView.heightAnchor.constraint(equalToConstant: 45),
             countryFlagView.widthAnchor.constraint(equalToConstant: 45),
             countryFlagView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            
+            chevronImage.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            chevronImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -24),
             labelStackView.leadingAnchor.constraint(equalTo: countryFlagView.trailingAnchor, constant: 18),
             labelStackView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
         ])

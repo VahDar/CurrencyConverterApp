@@ -50,7 +50,7 @@ class SettingTableViewController: UIViewController, UITableViewDelegate, UITable
     
     //MARK: - Setup UI
     func setupUI() {
-        navigationController?.navigationItem.hidesBackButton = true
+        navigationItem.hidesBackButton = true
         view.backgroundColor = .white
         tableView.delegate = self
         tableView.dataSource = self
