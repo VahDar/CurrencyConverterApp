@@ -8,14 +8,24 @@
 import SwiftUI
 
 struct CurrencyView: View {
+    //MARK: - Properties
     @StateObject var viewModel = CurrencyListViewModel()
-    
-        @State private var isUserSearching = false
+    @State private var isUserSearching = false
         
     var body: some View {
             NavigationView {
                 VStack {
                     SearchBarView(searchText: $viewModel.search, tools: [.search], title: "Currency List")
+                        .navigationBarHidden(true)
+                    if viewModel.showWarningMessage {
+                        VStack {
+                            Spacer()
+                            WarningView { Task {
+                                viewModel.fetchData()
+                            }
+                        }
+                    }
+                }
                     List {
                         ForEach(viewModel.searchFilter.sorted(by: { $0.key < $1.key }), id: \.key) { (currencyCode, rate) in
                             CurrencyCellView(imageAndName: currencyCode, currencyName: viewModel.countryCurrenciesManager.findCurrencyName(for: currencyCode) ?? "", amount: rate, selectedCurrency: viewModel.savedName)                        }
@@ -27,11 +37,9 @@ struct CurrencyView: View {
                     viewModel.fetchData()
                 }
             }
-            .alert(isPresented: $viewModel.showWarningMessage) {
-                Alert(title: Text("Error"), message: Text("Failed to fetch data"), dismissButton: .default(Text("OK")))
-            }
         }
     }
+
 struct CurrencyView_Previews: PreviewProvider {
     static var previews: some View {
         CurrencyView()

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC0029BC2AF417D50030888B /* WarningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0029BB2AF417D50030888B /* WarningView.swift */; };
 		FC0D61E82AF24F1B001D3F71 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0D61E72AF24F1B001D3F71 /* SettingTableViewController.swift */; };
 		FC14CA892AF145550099DDF0 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC14CA882AF145550099DDF0 /* SettingTableViewCell.swift */; };
 		FC17E3762AF0087600DB0472 /* SettingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC17E3752AF0087600DB0472 /* SettingCoordinator.swift */; };
@@ -66,6 +67,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FC0029BB2AF417D50030888B /* WarningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningView.swift; sourceTree = "<group>"; };
 		FC0D61E72AF24F1B001D3F71 /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 		FC14CA882AF145550099DDF0 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		FC17E3752AF0087600DB0472 /* SettingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCoordinator.swift; sourceTree = "<group>"; };
@@ -329,6 +331,7 @@
 				FCD9F3692AE2B4A900B2C790 /* CurrencyViewCell.swift */,
 				FCD9F36C2AE2B4DD00B2C790 /* SearchBar.swift */,
 				FCC942A82AE40FC1005CF7F1 /* NavigationBarView.swift */,
+				FC0029BB2AF417D50030888B /* WarningView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -566,6 +569,7 @@
 				FCC942BF2AE43486005CF7F1 /* WalletTableViewCell.swift in Sources */,
 				FCD9F35F2AE2AFE300B2C790 /* UIColor.swift in Sources */,
 				FC6D58912AE6E624003B6896 /* RealmService.swift in Sources */,
+				FC0029BC2AF417D50030888B /* WarningView.swift in Sources */,
 				FCF5BB392AE1653800BA6F6B /* SceneDelegate.swift in Sources */,
 				FCC942BC2AE4344E005CF7F1 /* WalletViewController.swift in Sources */,
 				FCD9F37D2AE2FE9300B2C790 /* CountryCurrenciesModel.swift in Sources */,

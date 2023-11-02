@@ -14,4 +14,5 @@ extension UIColor {
     static let caseClosed = UIColor(red: 245.0 / 255.0, green: 245.0 / 255.0, blue: 245.0 / 255.0, alpha: 1)
     static let caseOpen = UIColor(red: 241.0 / 255.0, green: 249.0 / 255.0, blue: 237.0 / 255.0, alpha: 1)
     static let tintOpen = UIColor(red: 146.0 / 255.0, green: 179.0 / 255.0, blue: 126.0 / 255.0, alpha: 1)
+    static let retryButton = UIColor(red: 125.0 / 255.0, green: 163.0 / 255.0, blue: 102.0 / 255, alpha: 1)
 }
