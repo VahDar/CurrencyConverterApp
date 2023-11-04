@@ -13,17 +13,16 @@ protocol WalletViewProtocol: AnyObject {
     func updateTableView()
 }
 
-class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, WalletViewProtocol {
+final class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, WalletViewProtocol {
     
     
     //MARK: - Properties
     var viewModel: WalletViewModelProtocol!
-    let searchBar = ReusingSearchBar()
+    private let searchBar = ReusingSearchBar()
     private var cancellable: AnyCancellable!
-    let navBar = NavBar()
     
     // MARK: - Views
-    var tableView: UITableView = {
+    private var tableView: UITableView = {
         let tableView = UITableView()
         tableView.backgroundColor = .white
         tableView.register(WalletTableViewCell.self, forCellReuseIdentifier: String(describing: WalletTableViewCell.self))
@@ -83,19 +82,19 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     //MARK: - Setup UI
-    func setupUI() {
+    private func setupUI() {
         navigationController?.navigationItem.hidesBackButton = true
         view.backgroundColor = .white
         
     }
     
-    func performSearch(_ searchHandler: @escaping (String) -> ()) {
+    private func performSearch(_ searchHandler: @escaping (String) -> ()) {
         self.cancellable = searchBar.$searchText
             .removeDuplicates()
             .sink { searchHandler($0) }
     }
     
-    func setupNavBar(title: String, addAction: @escaping () -> Void, handler: @escaping (String) -> ()) {
+    private func setupNavBar(title: String, addAction: @escaping () -> Void, handler: @escaping (String) -> ()) {
         searchBar.title = title
         searchBar.addAction = addAction
         let navBar = contentView(searchBar: searchBar)
@@ -143,7 +142,9 @@ class WalletViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = WalletTableViewCell(style: .default, reuseIdentifier: String(describing: WalletTableViewCell.self))
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: WalletTableViewCell.self), for: indexPath) as? WalletTableViewCell else {
+            fatalError("Unable to dequeue WalletTableViewCell")
+        }
         let item = viewModel.walletData[indexPath.row]
         cell.configure(with: item)
         return cell

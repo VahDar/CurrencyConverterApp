@@ -15,7 +15,7 @@ class AddCurrencyViewController: UIViewController {
     private var selectCountryViewModel: SelectViewModelProtocol!
     
     //MARK: - Views
-    private let titleLable: UILabel = {
+    private let titleLabel: UILabel = {
        let label = UILabel()
         label.text = "Owned Value"
         label.font = UIFont(name: "Montserrat-SemiBold", size: 17)
@@ -31,7 +31,7 @@ class AddCurrencyViewController: UIViewController {
         return label
     }()
     
-    private let countryView: SelectedCountry! = {
+    private lazy var countryView: SelectedCountry! = {
         let view = SelectedCountry()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -67,7 +67,7 @@ class AddCurrencyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        setUpCustomNavBar()
+        setupCustomNavBar()
         constraints()
         bindViewModels()
         addCountrySelectionTapGesture()
@@ -78,13 +78,13 @@ class AddCurrencyViewController: UIViewController {
     private func constraints() {
         navigationItem.hidesBackButton = true
         
-        [titleLable, countryView, selectedCountryLabel, amountTextField, addButton].forEach(view.addSubview)
+        [titleLabel, countryView, selectedCountryLabel, amountTextField, addButton].forEach(view.addSubview)
         
         NSLayoutConstraint.activate([
-            titleLable.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 18),
-            titleLable.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 18),
+            titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             amountTextField.heightAnchor.constraint(equalToConstant: 40),
-            amountTextField.topAnchor.constraint(equalTo: titleLable.bottomAnchor, constant: 18),
+            amountTextField.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 18),
             amountTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             amountTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             selectedCountryLabel.topAnchor.constraint(equalTo: amountTextField.bottomAnchor, constant: 16),
@@ -102,13 +102,13 @@ class AddCurrencyViewController: UIViewController {
     }
     
     // MARK: - Custom Navigation Bar Setup
-    func setupBackNavBar(title: String, backAction: @escaping () -> Void) {
+   private func setupBackNavBar(title: String, backAction: @escaping () -> Void) {
         let navBar = NavigationBarView(title: title, isBackButtonVisible: true, backAction: backAction)
         let hostingController = UIHostingController(rootView:navBar)
         navigationItem.titleView = hostingController.view
     }
     
-    private func setUpCustomNavBar() {
+    private func setupCustomNavBar() {
         setupBackNavBar(title: "Add Owned Currency") {
             self.navigationController?.popViewController(animated: true)
         }

@@ -7,23 +7,23 @@
 
 import UIKit
 
-class WalletTableViewCell: UITableViewCell {
+final class WalletTableViewCell: UITableViewCell {
 
     //MARK: - Views
-    let countryImage: UIImageView = {
+    private let countryImage: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
     
-    let currencyCodeLabel: UILabel = {
+    private let currencyCodeLabel: UILabel = {
         let lable = UILabel()
         lable.font = UIFont(name: "Inter-Medium", size: 24)
         lable.translatesAutoresizingMaskIntoConstraints = false
         return lable
     }()
     
-    let amountLabel: UILabel = {
+    private let amountLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "Inter-Medium", size: 15)
         label.textColor = .tabBarUnpressed
@@ -31,7 +31,7 @@ class WalletTableViewCell: UITableViewCell {
         return label
     }()
     
-    let currencyAmountLabel: UILabel = {
+    private let currencyAmountLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "Inter-Medium", size: 24)
         label.translatesAutoresizingMaskIntoConstraints = false

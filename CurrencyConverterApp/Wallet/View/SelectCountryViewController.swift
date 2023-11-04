@@ -13,7 +13,7 @@ protocol SelectViewModelProtocol {
     var didSelectCountry: ((String, CountryCurrenciesModel) -> Void)? { get set }
 }
 
-class SelectCountryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+final class SelectCountryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     // MARK: - Properties
     var viewModel: SelectViewModelProtocol!
@@ -39,7 +39,6 @@ class SelectCountryViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     // MARK: - SetUp UI NavBar
-
     func setupBackNavBar(title: String, backAction: @escaping () -> Void) {
         navigationItem.hidesBackButton = true
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
@@ -57,7 +56,6 @@ class SelectCountryViewController: UIViewController, UITableViewDelegate, UITabl
     
     
     // MARK: - Setup Constreints
-    
     private func constraints() {
         view.addSubview(tableView)
         
@@ -69,13 +67,14 @@ class SelectCountryViewController: UIViewController, UITableViewDelegate, UITabl
         ])
     }
     // MARK: - Setup TableView
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return countryManager.currencyData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = SelectCountryTableViewCell(style: .default, reuseIdentifier: String(describing: SelectCountryTableViewCell.self))
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: SelectCountryTableViewCell.self), for: indexPath) as? SelectCountryTableViewCell else {
+            fatalError("Unable to dequeue SelectCountryTableViewCell")
+        }
         let country = countryManager.currencyData.sorted { $0.key < $1.key }
         let item = country[indexPath.row]
         cell.configure(name: item.value.currencyCode, country: item.key, currency: item.value.currencyName)
@@ -83,11 +82,12 @@ class SelectCountryViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let country = countryManager.currencyData.sorted { $0.key < $1.key }
-        let item = country[indexPath.row]
-        (viewModel.didSelectCountry!)(item.key, item.value)
-        navigationController?.popViewController(animated: true)
+        let sortedCountries = countryManager.currencyData.sorted { $0.key < $1.key }
+        let item = sortedCountries[indexPath.row]
+        viewModel.didSelectCountry?(item.key, item.value)
+        viewModel.backAction?()
     }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 87.0
     }
