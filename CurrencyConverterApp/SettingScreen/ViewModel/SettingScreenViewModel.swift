@@ -18,7 +18,7 @@ protocol SettingScreenViewModelProtocol {
     func saveSelectedCurrencyName(_ currencyName: String)
 }
 
-class SettingScreenViewModel: SettingScreenViewModelProtocol {
+final class SettingScreenViewModel: SettingScreenViewModelProtocol {
     private var countryManager: CountryCurrenciesManager
     private var userDefaults: UserDefaults
        

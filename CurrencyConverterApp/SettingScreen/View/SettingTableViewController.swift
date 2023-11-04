@@ -33,11 +33,11 @@ class SettingTableViewController: UIViewController, UITableViewDelegate, UITable
     
     override func viewWillAppear(_ animated: Bool) {
             super.viewWillAppear(animated)
-            constreints()
+            constraints()
         }
     
-    //MARK: - Constreints
-    private func constreints() {
+    //MARK: - Constraints
+    private func constraints() {
         view.addSubview(tableView)
         
         NSLayoutConstraint.activate([
@@ -49,14 +49,14 @@ class SettingTableViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     //MARK: - Setup UI
-    func setupUI() {
+    private func setupUI() {
         navigationItem.hidesBackButton = true
         view.backgroundColor = .white
         tableView.delegate = self
         tableView.dataSource = self
     }
     
-    func setupBackNavBar(title: String, backAction: @escaping () -> Void) {
+    private func setupBackNavBar(title: String, backAction: @escaping () -> Void) {
         let navBar = NavigationBarView(title: title, isBackButtonVisible: true, backAction: backAction)
         let hostingController = UIHostingController(rootView:navBar)
         navigationItem.titleView = hostingController.view
@@ -75,7 +75,9 @@ class SettingTableViewController: UIViewController, UITableViewDelegate, UITable
     }
    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = SettingTableViewCell(style: .default, reuseIdentifier: String(describing: SettingTableViewCell.self))
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: SettingTableViewCell.self), for: indexPath) as? SettingTableViewCell else {
+            fatalError("Unable to dequeue SettingTableViewCell")
+        }
         let currency = viewModel.listData[indexPath.row]
         let isSelected = viewModel.isSelected(currency.currencyCode)
         cell.isCellSelected = isSelected

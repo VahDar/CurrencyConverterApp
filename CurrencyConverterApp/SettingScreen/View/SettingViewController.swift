@@ -34,7 +34,7 @@ class SettingViewController: UIViewController {
     
     private let selectedCode: UILabel = {
        let label = UILabel()
-        label.font = UIFont(name: "Inted-Medium", size: 14)
+        label.font = UIFont(name: "Inter-Medium", size: 14)
         label.textColor = .tabBarUnpressed
         label.text =  "Not found"
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -58,13 +58,13 @@ class SettingViewController: UIViewController {
         countryManager = CountryCurrenciesManager()
         setupUI()
         setUpCustomNavBar()
-        constreints()
+        constraints()
         tapGesture()
         updateFuncUI()
     }
     
-    //MARK: - Constreints
-    private func constreints() {
+    //MARK: - Constraints
+    private func constraints() {
         view.addSubview(contentView)
         [selectedCode, imageCountry, selectCurrencyLabel, lineContentView].forEach(contentView.addSubview)
         
@@ -88,7 +88,7 @@ class SettingViewController: UIViewController {
         ])
     }
 
-    func tapGesture() {
+    private func tapGesture() {
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(contentViewTapped))
            contentView.addGestureRecognizer(tapGestureRecognizer)
     }
@@ -103,11 +103,11 @@ class SettingViewController: UIViewController {
     }
     
     //MARK: - SetupUI
-    func setupUI() {
+    private func setupUI() {
         view.backgroundColor = .white
     }
     
-    func setupBackNavBar(title: String, backAction: @escaping () -> Void) {
+    private func setupBackNavBar(title: String, backAction: @escaping () -> Void) {
         navigationItem.hidesBackButton = true
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
@@ -121,7 +121,7 @@ class SettingViewController: UIViewController {
         }
     }
     
-    func updateFuncUI() {
+    private func updateFuncUI() {
         if !viewModel.selectedCurrency.isEmpty {
             let savedCurrency = viewModel.selectedCurrency
             let savedCurrencyName = countryManager.findCountry(by: savedCurrency) ?? "UAH"
@@ -130,11 +130,8 @@ class SettingViewController: UIViewController {
         }
     }
     
-    func updateUI(with currency: CountryCurrenciesModel) {
+    private func updateUI(with currency: CountryCurrenciesModel) {
             selectedCode.text = currency.currencyName
             imageCountry.image = UIImage(named: currency.currencyCode)
-        }
-
-    
-    
+    }
 }

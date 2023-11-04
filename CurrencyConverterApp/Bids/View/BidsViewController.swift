@@ -105,7 +105,7 @@ final class BidsViewController: UIViewController, UITableViewDelegate, UITableVi
    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: BidsTableViewCell.self), for: indexPath) as? BidsTableViewCell else {
-            fatalError("Unable to dequeue WalletTableViewCell")
+            fatalError("Unable to dequeue BidsTableViewCell")
     }
         let bidModel = viewModel.data[indexPath.row]
             cell.configure(bidModel)
