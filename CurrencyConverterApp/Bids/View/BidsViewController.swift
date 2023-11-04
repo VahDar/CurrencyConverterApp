@@ -13,7 +13,7 @@ protocol BidsViewProtocol: AnyObject {
     func updateTableView()
 }
 
-class BidsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, BidsViewProtocol {
+final class BidsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, BidsViewProtocol {
 
     //MARK: - Properties
     var viewModel: BidViewModelProtocol!
@@ -104,13 +104,15 @@ class BidsViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell = BidsTableViewCell(style: .default, reuseIdentifier: String(describing: BidsTableViewCell.self))
-            let bidModel = viewModel.data[indexPath.row]
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: BidsTableViewCell.self), for: indexPath) as? BidsTableViewCell else {
+            fatalError("Unable to dequeue WalletTableViewCell")
+    }
+        let bidModel = viewModel.data[indexPath.row]
             cell.configure(bidModel)
-            if indexPath.row > 0 {
-                cell.addSeparator()
-            }
-            return cell
+        if indexPath.row > 0 {
+            cell.addSeparator()
+        }
+        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

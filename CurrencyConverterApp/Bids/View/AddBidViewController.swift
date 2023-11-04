@@ -54,13 +54,13 @@ class AddBidViewController: UIViewController {
         return label
     }()
     
-    private let fromCountryView: SelectedCountry! = {
+    private lazy var fromCountryView: SelectedCountry! = {
         let view = SelectedCountry()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    private let toCountryView: SelectedCountry! = {
+    private lazy var toCountryView: SelectedCountry! = {
         let view = SelectedCountry()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -121,15 +121,15 @@ class AddBidViewController: UIViewController {
     }
     
     //MARK: - Custom NavBar setup
-    func setupBackNavBar(title: String, backAction: @escaping () -> Void) {
+   private func setupBackNavBar(title: String, backAction: @escaping () -> Void) {
         let navBar = NavigationBarView(title: title, isBackButtonVisible: true, backAction: backAction)
         let hostingController = UIHostingController(rootView:navBar)
         navigationItem.titleView = hostingController.view
     }
     
     private func setupCustomNavBar() {
-        setupBackNavBar(title: "Add Bid") {
-            self.navigationController?.popViewController(animated: true)
+        setupBackNavBar(title: "Add Bid") { [weak self] in
+            self?.navigationController?.popViewController(animated: true)
         }
     }
     
@@ -154,8 +154,7 @@ class AddBidViewController: UIViewController {
 
     //MARK: - ViewModel binding
     private func bindViewModels() {
-        if viewModel != nil {
-            viewModel.didSelectCountry = { [weak self] selectedCountryName, currencyCode in
+            viewModel?.didSelectCountry = { [weak self] selectedCountryName, currencyCode in
                 guard let self = self else { return }
                 switch viewModel.target {
                 case .from:
@@ -164,11 +163,8 @@ class AddBidViewController: UIViewController {
                 case .to:
                     viewModel.toCode = currencyCode.currencyCode
                     toCountryView.configure(county: selectedCountryName, currency: currencyCode.currencyName, code: currencyCode.currencyCode)
-                }
             }
-        } else {
-            print("select country in bindViewModel = nil")
-        }
+        } 
         addButton.addTarget(self, action: #selector(handleAddButton), for: .touchUpInside)
     }
     
