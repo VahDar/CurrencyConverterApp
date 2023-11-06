@@ -30,6 +30,7 @@ class WalletCoordinator: Coordinator {
         removeChildCoordinator(self)
         navigationController.removeFromParent()
     }
+    
     private func goToWallet() {
         let viewController = WalletViewController()
         viewModel.view = viewController
