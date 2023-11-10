@@ -53,6 +53,7 @@
 		FCD9F37D2AE2FE9300B2C790 /* CountryCurrenciesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9F37C2AE2FE9300B2C790 /* CountryCurrenciesModel.swift */; };
 		FCD9F37F2AE2FECF00B2C790 /* CountryCurrenciesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9F37E2AE2FECF00B2C790 /* CountryCurrenciesManager.swift */; };
 		FCD9F3812AE3000C00B2C790 /* CountryCurrencies.json in Resources */ = {isa = PBXBuildFile; fileRef = FCD9F3802AE3000C00B2C790 /* CountryCurrencies.json */; };
+		FCE520FC2AFE6591009FCD24 /* TestNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE520FB2AFE6591009FCD24 /* TestNetworkService.swift */; };
 		FCEA684C2AE5436400DB1240 /* WalletViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA684B2AE5436400DB1240 /* WalletViewModel.swift */; };
 		FCEF99C82AF1855900050419 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEF99C72AF1855900050419 /* SettingViewController.swift */; };
 		FCF5A6152AED07EB003297AE /* AddBidViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF5A6142AED07EA003297AE /* AddBidViewController.swift */; };
@@ -123,6 +124,7 @@
 		FCD9F37C2AE2FE9300B2C790 /* CountryCurrenciesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCurrenciesModel.swift; sourceTree = "<group>"; };
 		FCD9F37E2AE2FECF00B2C790 /* CountryCurrenciesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCurrenciesManager.swift; sourceTree = "<group>"; };
 		FCD9F3802AE3000C00B2C790 /* CountryCurrencies.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CountryCurrencies.json; sourceTree = "<group>"; };
+		FCE520FB2AFE6591009FCD24 /* TestNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestNetworkService.swift; sourceTree = "<group>"; };
 		FCEA684B2AE5436400DB1240 /* WalletViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewModel.swift; sourceTree = "<group>"; };
 		FCEF99C72AF1855900050419 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		FCF5A6142AED07EA003297AE /* AddBidViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBidViewController.swift; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 			isa = PBXGroup;
 			children = (
 				FCB7AA342AF9646A0038C45F /* CurrencyConverterAppTests.swift */,
+				FCE520FB2AFE6591009FCD24 /* TestNetworkService.swift */,
 			);
 			path = CurrencyConverterAppTests;
 			sourceTree = "<group>";
@@ -600,6 +603,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCE520FC2AFE6591009FCD24 /* TestNetworkService.swift in Sources */,
 				FCB7AA352AF9646A0038C45F /* CurrencyConverterAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -856,7 +860,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -884,7 +888,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
