@@ -39,6 +39,7 @@
 		FCC942B92AE433B8005CF7F1 /* WalletCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC942B82AE433B8005CF7F1 /* WalletCoordinator.swift */; };
 		FCC942BC2AE4344E005CF7F1 /* WalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC942BB2AE4344E005CF7F1 /* WalletViewController.swift */; };
 		FCC942BF2AE43486005CF7F1 /* WalletTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC942BE2AE43486005CF7F1 /* WalletTableViewCell.swift */; };
+		FCD86F452B051C210054D6E0 /* MockViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD86F442B051C210054D6E0 /* MockViewModel.swift */; };
 		FCD9F35F2AE2AFE300B2C790 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9F35E2AE2AFE300B2C790 /* UIColor.swift */; };
 		FCD9F3612AE2B00600B2C790 /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9F3602AE2B00600B2C790 /* Bundle-Decodable.swift */; };
 		FCD9F3652AE2B3EA00B2C790 /* CurrencyListCoordintor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9F3642AE2B3EA00B2C790 /* CurrencyListCoordintor.swift */; };
@@ -106,6 +107,7 @@
 		FCC942B82AE433B8005CF7F1 /* WalletCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCoordinator.swift; sourceTree = "<group>"; };
 		FCC942BB2AE4344E005CF7F1 /* WalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewController.swift; sourceTree = "<group>"; };
 		FCC942BE2AE43486005CF7F1 /* WalletTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletTableViewCell.swift; sourceTree = "<group>"; };
+		FCD86F442B051C210054D6E0 /* MockViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockViewModel.swift; sourceTree = "<group>"; };
 		FCD9F3592AE2AEDB00B2C790 /* Montserrat.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Montserrat.ttf; sourceTree = "<group>"; };
 		FCD9F35A2AE2AEDB00B2C790 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
 		FCD9F35B2AE2AEDB00B2C790 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 			children = (
 				FCB7AA342AF9646A0038C45F /* CurrencyConverterAppTests.swift */,
 				FCE520FB2AFE6591009FCD24 /* TestNetworkService.swift */,
+				FCD86F442B051C210054D6E0 /* MockViewModel.swift */,
 			);
 			path = CurrencyConverterAppTests;
 			sourceTree = "<group>";
@@ -605,6 +608,7 @@
 			files = (
 				FCE520FC2AFE6591009FCD24 /* TestNetworkService.swift in Sources */,
 				FCB7AA352AF9646A0038C45F /* CurrencyConverterAppTests.swift in Sources */,
+				FCD86F452B051C210054D6E0 /* MockViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
