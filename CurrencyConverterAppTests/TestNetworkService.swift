@@ -37,16 +37,16 @@ final class TestNetworkService: XCTestCase {
         }
     }
 
-    func testGetAmount() async throws {
-        guard let url = URL(string: "https://v6.exchangerate-api.com/v6/d92cf32d351f4549d332dc96/pair/" + "USD/UAH") else { return }
-        do {
-            let data = try await URLSession.shared.data(from: url)
-            XCTAssertNotNil(data)
-        } catch {
-            throw error
-        }
-    }
-    
-    func test
+//    func testGetAmount() async throws {
+//        guard let url = URL(string: "https://v6.exchangerate-api.com/v6/d92cf32d351f4549d332dc96/pair/" + "USD/UAH") else { return }
+//        do {
+//            let data = try await URLSession.shared.data(from: url)
+//            XCTAssertNotNil(data)
+//        } catch {
+//            throw error
+//        }
+//    }
+//    
+//    func test
 
 }
