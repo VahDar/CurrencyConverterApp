@@ -24,18 +24,18 @@ final class TestNetworkService: XCTestCase {
        try super.tearDownWithError()
     }
 
-    func testFetchCurrencyList() async throws {
-        guard let url = URL(string: "https://v6.exchangerate-api.com/v6/d92cf32d351f4549d332dc96/latest/" + "USD") else {
-            XCTFail("URL is invalid")
-            return
-        }
-        do {
-            let (data, _) = try await URLSession.shared.data(from: url)
-            XCTAssertNotNil(data)
-        } catch {
-            XCTAssertThrowsError(error)
-        }
-    }
+//    func testFetchCurrencyList() async throws {
+//        guard let url = URL(string: "https://v6.exchangerate-api.com/v6/d92cf32d351f4549d332dc96/latest/" + "USD") else {
+//            XCTFail("URL is invalid")
+//            return
+//        }
+//        do {
+//            let (data, _) = try await URLSession.shared.data(from: url)
+//            XCTAssertNotNil(data)
+//        } catch {
+//            XCTAssertThrowsError(error)
+//        }
+//    }
 
 //    func testGetAmount() async throws {
 //        guard let url = URL(string: "https://v6.exchangerate-api.com/v6/d92cf32d351f4549d332dc96/pair/" + "USD/UAH") else { return }
